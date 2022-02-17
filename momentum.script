@@ -1,0 +1,13 @@
+var numOne = document.getElementById('mass');
+var numTwo = document.getElementById('velocity');
+var addSum = document.getElementById('add-sum');
+var Heroin = document.getElementById('heroin');
+numOne.addEventListener('input', add);
+numTwo.addEventListener('input', add);
+function add() {
+var one = parseFloat(numOne.value) || 0;
+var two = parseFloat(numTwo.value) || 0;
+var momentumAnswer = (one * two)
+addSum.innerText = (momentumAnswer);
+Heroin.innerText = (one + " x " + two + " = " + momentumAnswer + " " + " The momentum of the object(s) is " + momentumAnswer + "p");
+}

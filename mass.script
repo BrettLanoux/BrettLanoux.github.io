@@ -1,0 +1,11 @@
+var numOne = document.getElementById('momentum');
+var numTwo = document.getElementById('velocity');
+var addSum = document.getElementById('add-sum');
+numOne.addEventListener('input', add);
+numTwo.addEventListener('input', add);
+function add() {
+var one = parseFloat(numOne.value) || 0;
+var two = parseFloat(numTwo.value) || 0;
+var massAnswer = (one / two)
+addSum.innerText = (one + " / " + two + " = " + massAnswer + " The mass of the object is " + massAnswer + "kg");
+}
