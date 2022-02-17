@@ -1,0 +1,9 @@
+var numOne = document.getElementById('num-one');
+var gravity = 9.8;
+var addSum = document.getElementById('add-sum');
+numOne.addEventListener('input', add);
+gravity.addEventListener('input', add);
+function add() {
+var one = parseFloat(numOne.value) || 0;
+addSum.innerText = one * gravity;
+}
