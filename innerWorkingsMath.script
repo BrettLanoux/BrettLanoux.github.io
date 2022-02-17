@@ -1,0 +1,80 @@
+var selection = prompt ("What type of calculator is needed?(Scientific, Mathematic)");
+
+if (selection === "Scientific") {
+  var selection1 = prompt ("What are you calculating?(Momentum, Velocity, Weight, Acceleration, Force, PE, KE, Work, Mass, Volume, Density, Area, Perimiter,)");
+}
+
+if (selection1 === "Momentum") {
+  var massM = prompt ("Type in the objects mass(in kilograms but leave the units out)");
+  var velocityM = prompt ("Type in the objects velocity(in m/s but leave the units out)");
+  alert(massM * velocityM + "kg*m/s^2");
+}
+
+if (selection1 === "Velocity") {
+  var distanceV = prompt ("Type in the distance the object(s) travelled(in meters but leave the units out)");
+  var timeV = prompt ("Type in the time it took the object(s) to travel the distance(in seconds but leave the units out)");
+  var directionV = prompt ("Type in the direction the object is traveling(North, South, East, West, NorthEast, SouthEast, NorthWest, SouthWest,Left, Right, Up, Down)")
+  alert(distanceV / timeV + "m/s " + directionV);
+}
+
+if (selection1 === "Weight") {
+  var massW = prompt ("Type in the object's mass(in kg but leave the units out)");
+  var gravity = 9.8;
+  alert(massW * gravity + " Newtons");
+}
+
+if (selection1 === "Acceleration") {
+  var velocityInitialA = prompt ("Enter the objects inital velocity(in m/s but leave the units out)");
+  var velocityFinalA = prompt ("Enter the objects final velocity(in m/s but leave the units out)");
+  var timeA = prompt ("Enter the time it took the object to travel between the inital velocity and final velocity(in seconds but leave the units out)");
+  var changeInVelocity = (velocityFinalA - velocityInitialA);
+  alert(changeInVelocity / timeA + "m/s^2");
+}
+
+if (selection1 === "Force") {
+  var massF = prompt ("What is the objects mass(in kg but leave the units out)");
+  var accelerationF = prompt ("What is the objects acceleration(in m/s^2 but leave the units out)");
+  alert(massF * accelerationF + " Newtons");
+}
+
+if (selection1 === "PE") {
+  var massPE = prompt ("Enter the objects mass(in kg but leave the units out)");
+  var heightPE = prompt ("Enter the height of the object(in meters but leave the units out)");
+  var gravity = 9.8;
+  var calculation1PE = (massPE * gravity);
+  alert(calculation1PE * heightPE + " Joules");
+}
+
+if (selection1 === "KE") {
+  var massKE = prompt ("Enter the objects mass(in kg but leave the units out)");
+  var velocityKE = prompt ("Enter the objects velocity(in m/s but leave the units out)");
+  var trueMassKE = (massKE / 2);
+  var trueVelocityKE = (velocityKE * velocityKE);
+  alert(trueMassKE * trueVelocityKE + " Joules");
+}
+
+if (selction1 === "Work") {
+  var forceW = prompt ("What is the force on the object?(in newtons but leave the untis out)");
+  var displacementW = promot ("What is the displacement of the object?(in meters but leave the units out)");
+  alert(forceW * displacementW + " Newton-Meters");
+}
+
+if (selection === "Mathematic") {
+  var selection2 = prompt ("What calculation are you doing?(Addition, Subtratction, Multiplication, Division)");
+}
+
+if (selection2 === "Addition") {
+  var oneA = prompt ("What is the first addend?");
+  var one2A = parseFloat(oneA);
+  var twoA = prompt ("What is the second addend?");
+  var two2A = parseFloat(twoA);
+  alert(one2A += two2A);
+}
+
+if (selection2 === "Subtraction") {
+  var oneS = prompt ("What is the minuend?");
+  var one2S = parseFloat(oneS)
+  var twoS = prompt ("What is the subtrahend?")
+  var two2S = parseFloat(twoS);
+  alert(one2S - two2S);
+  }
