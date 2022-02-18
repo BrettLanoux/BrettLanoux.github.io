@@ -1,13 +1,17 @@
-var numOne = document.getElementById('position-1');
-var numTwo = document.getElementById('position-2');
-var numThree = document.gitElementById('time')
+var numOne = document.getElementById('num-one');
+var numTwo = document.getElementById('num-two');
+var numThree = document.getElementById('num-three')
 var addSum = document.getElementById('add-sum');
+var velocity = document.getElementById('velocity');
 numOne.addEventListener('input', add);
 numTwo.addEventListener('input', add);
+numThree.addEventListener('input', add);
 function add() {
 var one = parseFloat(numOne.value) || 0;
 var two = parseFloat(numTwo.value) || 0;
 var three = parseFloat(numThree.value) || 0;
-var velocityAnswer = ((one - two) / three);
-addSum.innerText = ("(" + one + " - " + two + " ) " + " * " + three + " = " + velocityAnswer + " The velocity of the object is " + velocityAnswer + "m/s");
+var dis = one - two;
+var final = dis / three;
+addSum.innerText = final;
+velocity.innerText = ("The velocity of the object(s) is " + final + "m/s.");
 }    

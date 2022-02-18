@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="icon" href="https://www.pngkey.com/png/detail/360-3608686_calculator-clipart-icon.png">
-    <meta charset="UTF-8">
-    <title>Momentum calculator</title>
-    <style>
-        
+    <head>
+        <title>Area Calculator</title>
+        <style>
+                    
         body {
                 background-color: rgb(0, 0, 0);
             }
@@ -36,7 +34,7 @@
                 color: white;
                 position: absolute;
                 top: 60px;
-                left: 405px;
+                left: 465px;
                 text-decoration: underline solid white;
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 font-size: 45px;
@@ -46,35 +44,34 @@
                 color: white;
                 font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
-            #heroin {
+            #e {
                 color: white;
-                font-size: 20px
-            }
-            .drugs {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 18px;
                 position: absolute;
-                left: 448px;
-                top: 220px;
+                left: 465px;
+                top: 200px;
             }
-    </style>
-</head>
-<body>
-<h2 id="heading">Momentum calculator</h2>
-<div class="textBox">
-    <input type="number" id="mass" placeholder="Enter mass here"></input>" + "<input type="number" id="velocity" placeholder="Enter velocity here"></input>
-</div>
-<h2 id="add-sum"></h2>
-<h3 id="equal">=</h3>
-<h4 id="plus">x</h4>
-<div class="drugs">
-    <h5 id="heroin"></h5>
-</div>
-</body>
-<div class="return">
-    <nav>
-        <li>  
-        <a class="nav-a" href="physci.html">Return</a>
-        </li>
-    </nav>
-</div>
-<script src="momentum.script"></script>
+        </style>
+    </head>
+    <body>
+        <h1 id="heading">Area Calculator</h1>
+        <div class="textBox">
+            <input type="number" id="length" placeholder="Enter length here"></input>" + "<input type="number" id="width" placeholder="Enter width here"></input>
+        </div>
+        <h2 id="add-sum"></h2>
+        <h3 id="equal">=</h3>
+        <h4 id="plus">x</h4>
+        <div id="answer">
+        <h5 id="e"></h5>
+    </div>
+        <div class="return">
+            <nav>
+                <li>  
+                <a class="nav-a" href="physci.html">Return</a>
+                </li>
+            </nav>
+        </div>
+    </body>
+    <script src="area.script"></script>
 </html>
