@@ -11,25 +11,31 @@
             .textBox {
                 position:absolute;
                 top: 200px;
-                left: 450px;
+                left: 345px;
             }
             #add-sum {
                 position:absolute;
                 top: 176px;
-                left: 843px;
+                left: 930px;
                 color: white;
+            }
+            #over {
+                color: white;
+                position:absolute;
+                top: 182px;
+                left: 725px;
             }
             #equal {
                 color: white;
                 position:absolute;
-                top: 182px;
-                left: 830px;
+                top: 181px;
+                left: 924px;
             }
-            #plus {
+            #minus {
                 color: white;
                 position:absolute;
                 top: 180px;
-                left: 630px;
+                left: 525px;
             }
             #heading {
                 color: white;
@@ -50,11 +56,12 @@
 <body>
 <h2 id="heading">Velocity calculator</h2>
 <div class="textBox">
-    <input type="number" id="position-1" placeholder="Enter origonal position here"></input>" + "<input type="number" id="position-2" placeholder="Enter the final position here"></input>" + "<input type="number" id="time" placeholder="Enter time here"></input>
-</div>
+    <input type="number" id="position-1" placeholder="Enter final position"></input>" + "<input type="number" id="position-2" placeholder="Enter origonal position"></input>" + "<input type="number" id="time" placeholder="Enter time"></input> 
+</div class="signs">
 <h2 id="add-sum"></h2>
-<h3 id="equal">*</h3>
-<h4 id="plus">/</h4>
+<h3 id="over">/</h3>
+<h4 id="minus">-</h4>
+<h5 id="equal">=</h5>
 </body>
 <div class="return">
     <nav>

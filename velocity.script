@@ -8,6 +8,6 @@ function add() {
 var one = parseFloat(numOne.value) || 0;
 var two = parseFloat(numTwo.value) || 0;
 var three = parseFloat(numThree.value) || 0;
-var velocityAnswer = ((two - one) / three)
-addSum.innerText = ("(" + two + " - " + one + " ) " + three + " = " + velocityAnswer + " The velocity of the object is " + velocityAnswer + "m/s");
+var velocityAnswer = ((one - two) / three);
+addSum.innerText = ("(" + one + " - " + two + " ) " + " * " + three + " = " + velocityAnswer + " The velocity of the object is " + velocityAnswer + "m/s");
 }    
