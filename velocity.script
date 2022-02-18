@@ -1,5 +1,5 @@
-var numOne = document.getElementById('');
-var numTwo = document.getElementById('mass');
+var numOne = document.getElementById('position-1');
+var numTwo = document.getElementById('position-2');
 var numThree = document.gitElementById('time')
 var addSum = document.getElementById('add-sum');
 numOne.addEventListener('input', add);
@@ -8,6 +8,6 @@ function add() {
 var one = parseFloat(numOne.value) || 0;
 var two = parseFloat(numTwo.value) || 0;
 var three = parseFloat(numThree.value) || 0;
-var velocityAnswer = (one / two)
-addSum.innerText = (one + " / " + two + " = " + velocityAnswer + " The velocity of the object is " + velocityAnswer + "m/s");
-}
+var velocityAnswer = ((two - one) / three)
+addSum.innerText = ("(" + two + " - " + one + " ) " + three + " = " + velocityAnswer + " The velocity of the object is " + velocityAnswer + "m/s");
+}    
