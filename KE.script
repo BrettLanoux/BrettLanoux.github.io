@@ -9,7 +9,7 @@ var mass = parseFloat(numOne.value) || 0;
 var velocity = parseFloat(numTwo.value) || 0;
 var v^2 = (velocity * velocity);
 var m/2 = (mass / 2);
-var answer = (m/2 * v^2);
-addSum.innerText = (answer + "J");
-exp.innerText = ("The kinetic energy of the object is " + answer + "J.");
+var keAnswer = (m/2 * v^2);
+addSum.innerText = (keAnswer + "J");
+exp.innerText = ("The kinetic energy of the object is " + keAnswer + "J.");
 }

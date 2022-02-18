@@ -1,0 +1,17 @@
+var numOne = document.getElementById('num-one');
+var numTwo = document.getElementById('num-two');
+var numThree = document.getElementById('num-three');
+var exp = document.getElementById('explain');
+var addSum = document.getElementById('add-sum');
+numOne.addEventListener('input', add);
+numTwo.addEventListener('input', add);
+numThree.addEventListener('input', add);
+function add() {
+var one = parseFloat(numOne.value) || 0;
+var two = parseFloat(numTwo.value) || 0;
+var three = parseFloat(numThree.value) || 0;
+var semiFinal = one * two;
+var final = semiFinal * three;
+addSum.innerText = (final + " cubic meters");
+exp.innerText = ("The volume of the object(s) is " + final + " cubic meters");
+}
