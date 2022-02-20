@@ -1,15 +1,15 @@
-var numOne = document.getElementById('num-one');
+var numOne = document.getElementById('num-one'); 
 var numTwo = document.getElementById('num-two');
 var addSum = document.getElementById('add-sum');
-var exp = document.getElementById('explain');
+
 numOne.addEventListener('input', add);
 numTwo.addEventListener('input', add);
+
 function add() {
-var mass = parseFloat(numOne.value) || 0;
-var velocity = parseFloat(numTwo.value) || 0;
-var v^2 = (velocity * velocity);
-var m/2 = (mass / 2);
-var keAnswer = (m/2 * v^2);
-addSum.innerText = (keAnswer + "J");
-exp.innerText = ("The kinetic energy of the object is " + keAnswer + "J.");
+var one = parseFloat(numOne.value) || 0;
+var two = parseFloat(numTwo.value) || 0;
+var vV = two * two;
+var semiAnswer = one * vV;
+var final = semiAnswer / 2;
+addSum.innerText = (final + "J");
 }
