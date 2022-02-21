@@ -1,0 +1,11 @@
+var mass = document.getElementById('mass');
+var volume = document.getElementById('volume');
+var addSum = document.getElementById('add-sum');
+mass.addEventListener('input', add);
+volume.addEventListener('input', add);
+function add() {
+    var maass = parseFloat(mass.value) || 0;
+    var voolume = parseFloat(volume.value) || 0;
+    var densityAnswer = (maass / voolume);
+    addSum.innerText = densityAnswer; 
+}

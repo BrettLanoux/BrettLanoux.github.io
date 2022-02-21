@@ -1,0 +1,12 @@
+var lenth = document.getElementById('lenth');
+var width = document.getElementById('width');
+var addSum = document.getElementById('add-sum');
+lenth.addEventListener('input', add);
+width.addEventListener('input', add);
+function add() {
+    var leenth = parseFloat(lenth.value) || 0;
+    var wiidth = parseFloat(width.value) || 0;
+    var halfWay = (wiidth + leenth);
+    var answer = (halfWay * 2);
+    addSum.innerText = (answer);
+}
