@@ -1,12 +1,14 @@
-var lenth = document.getElementById('lenth');
-var width = document.getElementById('width');
+var long = document.getElementById('lenth');
+var wide = document.getElementById('width');
 var addSum = document.getElementById('add-sum');
-lenth.addEventListener('input', add);
-width.addEventListener('input', add);
+var exp = document.getElementById('explain');
+long.addEventListener('input', add);
+wide.addEventListener('input', add);
 function add() {
-    var leenth = parseFloat(lenth.value) || 0;
-    var wiidth = parseFloat(width.value) || 0;
-    var halfWay = (wiidth + leenth);
-    var answer = (halfWay * 2);
-    addSum.innerText = (answer);
+var one = parseFloat(long.value) || 0;
+var two = parseFloat(wide.value) || 0;
+var half = one + two;
+var done = half * 2;
+addSum.innerText = done;
+exp.innerText = ("The perimeter of the " + one + " * " + two + " object is " + done + " units");
 }

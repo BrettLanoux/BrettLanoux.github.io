@@ -11,6 +11,9 @@ if (minutes < 10){
 if (sec < 10){
     sec = "0" + sec
 }
+if (hours > 12){
+    hours = "0" + hours
+}
 var t_str = hours + ":" + minutes + " ";
 if(hours > 11){
     t_str += "PM";

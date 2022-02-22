@@ -12,12 +12,12 @@
                 background-color: rgb(0, 0, 0);
             }
             div {
-            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0);
             margin: 0 auto;
             display: inline-flex;
             padding: 10px;
             padding: 0;
-            position:absolute;
+            position: fixed;
             }
 
             h1 {
@@ -26,12 +26,14 @@
             font-size: 50px;
             text-decoration: underline white;
             position: relative;
-            left: 500px;
+            left: 509px;
             top: 75px;
+            position: fixed;
             }
             #nav-ul {
             padding: auto;
             padding: auto;
+            position: fixed;
             }
             #science {
             background: rgb(0, 0, 0);
@@ -42,6 +44,7 @@
             position: absolute;
             left: 250px;
             top: 300px;
+            position: fixed;
             }
             .nav-a {
                 font-size: 25px;
@@ -56,6 +59,7 @@
             position: absolute;
             left: 760px;
             top: 300px;
+            position: fixed;
             }
             .nav-a2 {
                 font-size: 25px;
@@ -66,8 +70,9 @@
             padding: 10px;
             padding: 0;
             position: absolute;
-            top: 560px;
-            left: 40px;
+            top: 510px;
+            left: 543px;
+            position: fixed;
             }
             .nav-a3 {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -76,14 +81,13 @@
             nav3 {
             background: rgb(0, 0, 0);
             margin: auto;
-            padding-left: 1111px;
             }
             #time_span {
                 font-size: 35px;
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 position: relative;
                 top: 140px;
-                left: 430px;
+                left: 530px;
                 color: white;
                 border-style: solid
             }
@@ -100,23 +104,31 @@
                 display: inline-flex;
                 position:absolute;
                 top: 10px;
-                left: 10px;
+                left: 65px;
                 padding: 30px;
-                padding-left: 1230px;
+                padding-left: 1130px;
+                position: fixed;
            }
             .nav-a4 {
                 color: rgb(255, 255, 255);
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 position: absolute;
-                right: 1111px;
+                right: 1011px;
                 top: 18px;
             }
             #image-1 {
                 position: relative;
                 top: 300px;
                 left: 575px;
+                position: fixed;
             }
-            
+            #note {
+                position:fixed;
+                top: 100px;
+                left: 100px;
+                color: white;
+                width: 200px;
+            }
         </style>
 
     </head>
@@ -124,6 +136,12 @@
         <h1>Calculator</h1>
     </div>
     <body>
+        <div id="noteBox">
+            <p id="note">*NOTE* If your page can scroll either down/up or right/left, just click anywhere on the page and it should fix iteself!</p>
+        </div>
+        <div id="fullscreen">
+            <script src=""></script>
+        </div>
         <img id="image-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiPXCTix8NkbqIl31J6oUHWbajTFoXBJmae23SNjGptJgviBJguekSZaRt6QiR_5BVqW4:https://www.iconsdb.com/icons/download/white/calculator-2-512.png&usqp=CAU" alt="calculator.img" height="100px" width="100px">
         <div id="science">
             <nav>
