@@ -1,5 +1,5 @@
-var numOne = document.getElementById('num-one'); 
-var numTwo = document.getElementById('num-two');
+var numOne = document.getElementById('mass');
+var numTwo = document.getElementById('height');
 var addSum = document.getElementById('add-sum');
 var exp = document.getElementById('explain');
 
@@ -9,9 +9,8 @@ numTwo.addEventListener('input', add);
 function add() {
 var one = parseFloat(numOne.value) || 0;
 var two = parseFloat(numTwo.value) || 0;
-var vV = two * two;
-var semiAnswer = one * vV;
-var final = semiAnswer / 2;
+var three = 9.8;
+var final = one * two * three; 
 addSum.innerText = (final + "J");
-exp.innerText = ("The Kinetic Energy of the object(s) is " + final + " Joules");
+exp.innerText = ("The Potential Energy of the object(s) is " + final + " Joules");
 }

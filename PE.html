@@ -3,71 +3,57 @@
     <head>
         <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR40AnH7idwyZJPaW36z7xWGYnE31ncL-lpEdhmvbTqLQPMix00XNfcMP-mJyy8ypy9zUc:https://www.iconspng.com/uploads/black-and-white-calculator/black-and-white-calculator.png&usqp=CAU">
         <meta charset="UTF-8">
-        <title>Kinetic Energy Calculator</title>
+        <title>Potential Energy Calculator</title>
         <style>
-                 
-        body {
+                        body {
                 background-color: rgb(0, 0, 0);
             }
             .textBox {
                 position:absolute;
                 top: 200px;
-                left: 475px;
+                left: 450px;
             }
             #add-sum {
                 position:absolute;
                 top: 176px;
-                left: 868px;
+                left: 843px;
                 color: white;
-            }
-            #times {
-                color: white;
-                position:absolute;
-                top: 180px;
-                left: 657px;
             }
             #equal {
                 color: white;
                 position:absolute;
-                top: 181px;
-                left: 855px;
+                top: 182px;
+                left: 825px;
             }
             #heading {
                 color: white;
                 position: absolute;
                 top: 100px;
-                left: 470px;
+                left: 445px;
                 text-decoration: underline solid white;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
             .nav-a {
                 color: white;
-                font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
             #explain {
                 color: white;
-                font-size: 20px;
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                position:absolute;
-                top: 200px;
-                left: 450px;
-
-            }
-            .answer {
+                font-size: 20px;
                 position: absolute;
-                left: 450px;
-                top: 220px;
+                top: 200px;
+                left: 415px;
             }
         </style>
     </head>
     <body>
-        <h1 id="heading">Kinetic Energy Calculator</h1>
+        <h1 id="heading">Potential Energy Calculator</h1>
         <div class="textBox">
-            <input type="number" id="num-one" placeholder="Enter Mass(kg)">____</input><input type="number" id="num-two" placeholder="Enter Velocity(m/s)"></input>
+            <input type="number" id="mass" placeholder="Enter Mass"></input>____<input type="number" id="height" placeholder="Enter Height"></input>
         </div>
         <h2 id="add-sum"></h2>
-        <h3 id="times">*</h3>
-        <h4 id="equal">=</h4>
+        <h3 id="equal">=</h3>  
+        <h4 id="plus"></h4>
         <h5 id="explain"></h5>
         <div class="return">
             <nav>
@@ -77,5 +63,5 @@
             </nav>
         </div>
     </body>
-    <script src="KE.script"></script>
+    <script src="PE.script"></script>
 </html>
