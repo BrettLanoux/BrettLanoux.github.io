@@ -67,10 +67,14 @@
 .form-container .cancel {
   background-color: red;
 }
+            
+ .form-container .cancel:hover {
+  background-color: blue;
+}
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
-  background-color: white;
+  opacity: 1;
 }
         </style>
     </head>
@@ -83,8 +87,8 @@
   <form action="/action_page.php" class="form-container">
       <h1>Are you gay?</h1>
 
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    <button type="submit" class="btn">Yes</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">No</button>
   </form>
 </div>
     </body>
