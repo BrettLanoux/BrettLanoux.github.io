@@ -27,7 +27,7 @@
 
             #mainMenu {
                 position: absolute;
-                left: 1227px;
+                left: 1200px;
                 top: 2px;
                 width: 50px;
                 height: 50px;
@@ -46,7 +46,7 @@
 
             #menuPopup {
                 position: absolute;
-                left: 1030px;
+                left: 1010px;
                 top: 0px;
                 width: 245px;
                 height: 500px;
@@ -61,6 +61,23 @@
                 color: rgb(3,250,3);
                 font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
+            ol.menuOrd 
+            {
+                list-style-type: inherit;
+                position: absolute;
+                top: 60px;
+                color: rgb(3,250,3);
+            }
+            a:link {
+                color: rgb(3,250,3);
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            a:visited {
+                color: rgb(3,250,3);
+                background-color: transparent;
+                text-decoration: underline;
+            }
         </style>
     </head>
     <body>
@@ -74,20 +91,18 @@
             <h1 id="menuPopupHeader">
                 <u>Menu</u>
             </h1>
+            <ol class="menuOrd" type="0">
+                <li>
+                    <a href="index.html">Home Page</a>
+                </li>
+                <li>
+                    <a href="preMade.html">Pre-Made Orders</a>
+                </li>
+                <li>
+                    <a href="email.html">Custom Order</a>
+                </li>
+            </ol>
         </div>
     </body>
-    <script>
-        var menuPop = document.getElementById('menuPopup');
-        var b = 1;
-        function menuExtend() {
-            if (b == 0) {
-                menuPop.style.display = "block";
-                b = 1;
-            }
-            else {
-                menuPop.style.display = "none";
-                b = 0
-            }
-        }
-    </script>
+    <script src="menuExtend.js"></script>
 </html>
