@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Brett's Game?</title>
+  <title>Brett's Game</title>
   <style>
     
     #playerNameID {
@@ -350,6 +350,13 @@
         padding: 5px 5px 5px 5px;
         border: 3px solid rgb(0, 0, 0);
     }
+
+    #jamesonCatImage {
+        position: absolute;
+        width: 600px;
+        top: 0px;
+        left: 330px;
+    }
   </style>
 </head>
 <body onload="update(), moneyUpdate(), autoMoneyUpdate()" class="container">
@@ -390,6 +397,7 @@
     <img id="mainClickingTwo" onclick="clicksAdd()" src="selectCursorImage.png">
     <img id="titleDisplay" src="titleImage.png">
     <img id="titleDisplayUnderline" src="underlineImage.png"> 
+    <img id="jamesonCatImage" src="jamesonCat.png">
 </body>
 <script src="clickingAnimation.js"></script>
 <script>
@@ -398,6 +406,7 @@
 
 var title = document.getElementById('titleDisplay');
 var titleUnderline = document.getElementById('titleDisplayUnderline');
+var jmson = document.getElementById('jamesonCatImage');
 
 var mainClickingButton = document.getElementById('mainClicking');
 var mainClickingButtonTwo = document.getElementById('mainClickingTwo')
@@ -605,7 +614,36 @@ function playerNameSave() {
   decideWhatToDo();
 
   if(playerName.value === "jameson") {
-    window.location.reload();
+    setInterval(function() {
+        jmson.style.opacity = '10%'
+        setInterval(function() {
+            jmson.style.opacity = '20%'
+            setInterval(function() {
+                jmson.style.opacity = '30%'
+                setInterval(function() {
+                    jmson.style.opacity = '40%'
+                    setInterval(function() {
+                        jmson.style.opacity = '50%'
+                        setInterval(function() {
+                            jmson.style.opacity = '60%'
+                            setInterval(function() {
+                                jmson.style.opacity = '70%'
+                                setInterval(function() {
+                                    jmson.style.opacity = '80%'
+                                    setInterval(function() {
+                                        jmson.style.opacity = '90%'
+                                        setInterval(function() {
+                                            jmson.style.opacity = '100%'
+                                        }, 200);
+                                    }, 200);
+                                }, 200);
+                            }, 200);
+                        }, 200);
+                    }, 200);
+                }, 200);
+            }, 200);
+        }, 200);
+    }, 200);
   }
 }
 
