@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Brett's Game!</title>
+  <title>Brett's Game</title>
   <style>
     
     #playerNameID {
@@ -144,7 +144,7 @@
         top: 65px;
         left: 1227px;
         display: none;
-        background-color: rgb(255, 0, 0);
+        background-color: rgb(255, 255, 255);
     }
 
     #secretCodeInput {
@@ -603,6 +603,10 @@ function playerNameSave() {
   namePlate.innerText = 'Name: ' + playerName.value;
   
   decideWhatToDo();
+
+  if(playerName === "jameson") {
+    alert('Did it work?');
+  }
 }
 
 
