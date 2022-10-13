@@ -352,10 +352,10 @@
     }
 
     #jamesonCatImage {
+        display: none;
         position: absolute;
-        opacity: 0%;
         width: 600px;
-        top: 0px;
+        top: 60px;
         left: 330px;
     }
   </style>
@@ -615,26 +615,59 @@ function playerNameSave() {
   decideWhatToDo();
 
   if(playerName.value === "jameson") {
-    setInterval(function() {
+    jmson.style.opacity = '0%'
+    jmson.style.display = 'initial'
+    setTimeout(function() {
         jmson.style.opacity = '10%'
-        setInterval(function() {
+        setTimeout(function() {
             jmson.style.opacity = '20%'
-            setInterval(function() {
+            setTimeout(function() {
                 jmson.style.opacity = '30%'
-                setInterval(function() {
+                setTimeout(function() {
                     jmson.style.opacity = '40%'
-                    setInterval(function() {
+                    setTimeout(function() {
                         jmson.style.opacity = '50%'
-                        setInterval(function() {
+                        setTimeout(function() {
                             jmson.style.opacity = '60%'
-                            setInterval(function() {
+                            setTimeout(function() {
                                 jmson.style.opacity = '70%'
-                                setInterval(function() {
+                                setTimeout(function() {
                                     jmson.style.opacity = '80%'
-                                    setInterval(function() {
+                                    setTimeout(function() {
                                         jmson.style.opacity = '90%'
-                                        setInterval(function() {
+                                        setTimeout(function() {
                                             jmson.style.opacity = '100%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '90%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '80%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '70%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '60%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '50%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '40%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '30%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '20%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '10%'
+                                            setTimeout(function() {
+                                            jmson.style.opacity = '0%'
+                                            jmson.style.display = 'none'
+                                        }, 200);
+                                        }, 200);
+                                        }, 200);
+                                        }, 200);
+                                        }, 200);
+                                        }, 200);
+                                        }, 200);
+                                        }, 200);
+                                        }, 200);
+                                        }, 2000);
                                         }, 200);
                                     }, 200);
                                 }, 200);
