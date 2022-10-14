@@ -515,7 +515,7 @@
         <p id="prestigeCounterInfo">
         </p>
     </div>
-    <audio autoplay id="jazzMoosic" src="jaz.mp3" type="audio/mpeg"></audio>
+    <audio controls autoplay id="jazzMoosic" src="jaz.mp3" type="audio/mpeg"></audio>
 </body>
 <script src="clickingAnimation.javascript"></script>
 <script>
@@ -757,6 +757,10 @@ function playerNameSave() {
   playerNameInfoDisplay.innerText = "Player Name: " + playerName.value;
   }
 
+  if (playerName.value === 'jaedyn' || playerName.value === 'Jaedyn') {
+    alert('EW! Grooooooooooosssssssssss!');
+  }
+
   if(playerName.value === "jameson" || playerName.value === 'Jameson') {
     jmson.style.opacity = '0%'
     jmson.style.display = 'initial'
@@ -823,8 +827,10 @@ function playerNameSave() {
         }, 200);
     }, 200);
   }
+  setTimeout(function() {
+    decideWhatToDo();
+  }, 6000);
   infoImage.style.display = 'initial';
-  decideWhatToDo();
 }
 
 
