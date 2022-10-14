@@ -531,7 +531,7 @@ var infoBoxNumberVarHolder = 0;
 var infoImage = document.getElementById('infoImageThing');
 var changeLogWHOLE = document.querySelector('.changeLogBox');
 
-var clickPower = 1;
+var clickPower = 10;
 var prestigeCountREAL = 1;
 var prestigeCount = prestigeCountREAL -= 1;
 
@@ -706,7 +706,7 @@ function closeChangeLog() {
 
 
 function clicksAdd() {
-    moneyAmount++;
+    moneyAmount += (clickPower * 1);
 }
 
 
