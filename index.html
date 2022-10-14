@@ -436,7 +436,7 @@
     }
   </style>
 </head>
-<body onload="update(), moneyUpdate(), autoMoneyUpdate()" class="container">
+<body onload="update(), moneyUpdate(), autoMoneyUpdate(), playAudio()" class="container">
     <div class="changeLogBox">
         <img id="exitChangeLog" draggable="false" (dragstart)="false;" onclick="closeChangeLog()" src="xImage.png">
         <h1 id="changeLogTitle">
@@ -515,7 +515,7 @@
         <p id="prestigeCounterInfo">
         </p>
     </div>
-    <audio controls autoplay id="jazzMoosic" src="jaz.mp3" type="audio/mpeg"></audio>
+    <audio id="jazMoozic" src="jaz.mp3"></audio>
 </body>
 <script src="clickingAnimation.javascript"></script>
 <script>
