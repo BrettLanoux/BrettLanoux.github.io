@@ -355,8 +355,10 @@
         left: 330px;
     }
     .basicInfoBoxRight {
-        display: initial;
+        display: none;
         position: absolute;
+        left: 991px;
+        top: 105px;
         height: 350px;
         width: 250px;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -365,46 +367,132 @@
         padding: 5px 5px 5px 5px;
         border: 3px solid rgb(0, 0, 0);
     }
+
+    #infoImageThing {
+        display: none;
+        position: absolute;
+        width: 17px;
+        left: 1240px;
+        top: 538px;
+    }
+
+    #creditsImage {
+        position: absolute;
+        left: 950px;
+        top: 300px;
+        width: 120px;
+    }
+
+    #BrokenClicking {
+        display: none;
+        position: absolute;
+        width: 75px;
+        top: 269px;
+        left: 596px;
+    }
+
+    .changeLogBox {
+        position: absolute;
+        left: 22px;
+        top: 105px;
+        height: 230px;
+        width: 230px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: white;
+        border: 3px solid rgb(0, 0, 0);
+        z-index: 999;
+    }
+
+    #exitChangeLog {
+        position: relative;
+        top: 2px;
+        left: 2px;
+    }
+
+    .changeLogText {
+        display: block;
+        position: relative;
+        font-size: 13px;
+        top: 0px;
+        left: 5px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #changeLogTitle {
+        position: absolute;
+        bottom: 197.5px;
+        left: 27px;
+        font-size: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-decoration: underline;
+    }
   </style>
 </head>
 <body onload="update(), moneyUpdate(), autoMoneyUpdate()" class="container">
+    <div class="changeLogBox">
+        <img id="exitChangeLog" draggable="false" (dragstart)="false;" onclick="closeChangeLog()" src="xImage.png">
+        <h1 id="changeLogTitle">
+            *CHANGE LOG* 10/14/22
+        </h1>
+        <p class="changeLogText">
+            Added a new clicker if you hold it down for 3+ seconds.
+        </p>
+
+        <p class="changeLogText">
+            Added info box at the bottom right(Click the info symbol).
+        </p>
+
+        <p class="changeLogText">
+            Added 'Made by Brett' to the title.
+        </p>
+
+        <p class="changeLogText">
+            DO NOT NAME YOURSELF 'jameson'!!!!!!!!!
+        </p>
+        <p class="changeLogText">
+            Added Change Log
+        </p>
+    </div>
 <div id="leftBorder"></div>
     <div id="rightBorder"></div>
     <div id="topBorder"></div>
     <div id="bottomBorder"></div>
     <div id="borderFiller"></div>
     <p id="moneyDisplay"></p>
+    <img id="infoImageThing" draggable="false" (dragstart)="false;" onclick="infoBoxOpen()" src="infoImage.png">
     <button id="startButton" onclick="showMainMenu()">Start Game</button>
   <input type="text" id='playerNameID' placeholder="Player Name...">
   <button id="playerNameSubmit" onclick="playerNameSave()">Next</button>
-  <img id="upgradesGoTo" onclick="showUpgradeShop()" src="upgradeArrowImage.png">
-  <img id="autoMain" onclick="autoMenuOpen()" src="autoIcon.png">
-  <img id="autoGoBack" onclick="autoMenuHide()" src="goBackArrowImage.png">
-  <img id="upgradeAutomatedOne" onclick="buyAutomatedOne()" src="automatedClickOneImage.png">
-  <img id="upgradeClicks" onclick="betterClicks()" src="upgradeClicksImage.png">
-  <img id="cratesGoTo" onclick="showCrateShop()" src="chestImage.png">
-  <img id="prestigeGoTo" onclick="prestigeMenuOpen()" src="crownImage.png">
-  <img id="upgradeShopGoBackGoTo" onclick="hideUpgradeShop()" src="goBackArrowImage.png">
+  <img id="upgradesGoTo" draggable="false" (dragstart)="false;" onclick="showUpgradeShop()" src="upgradeArrowImage.png">
+  <img id="autoMain" draggable="false" (dragstart)="false;" onclick="autoMenuOpen()" src="autoIcon.png">
+  <img id="autoGoBack" draggable="false" (dragstart)="false;" onclick="autoMenuHide()" src="goBackArrowImage.png">
+  <img id="upgradeAutomatedOne" draggable="false" (dragstart)="false;" onclick="buyAutomatedOne()" src="automatedClickOneImage.png">
+  <img id="upgradeClicks" draggable="false" (dragstart)="false;" onclick="betterClicks()" src="upgradeClicksImage.png">
+  <img id="cratesGoTo" draggable="false" (dragstart)="false;" onclick="showCrateShop()" src="chestImage.png">
+  <img id="prestigeGoTo" draggable="false" (dragstart)="false;" onclick="prestigeMenuOpen()" src="crownImage.png">
+  <img id="upgradeShopGoBackGoTo" draggable="false" (dragstart)="false;" onclick="hideUpgradeShop()" src="goBackArrowImage.png">
   <div id="basicCrateBuy" onclick="buyBasicCrate()">
-    <img id="basicCrateBuyImage" onclick="buyBasicCrate()" src="oneStarBasic.png">
+    <img id="basicCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyBasicCrate()" src="oneStarBasic.png">
 </div>
   <div id="intermediateCrateBuy" onclick="buyIntermediateCrate()">
-    <img id="intermediateCrateBuyImage" onclick="buyIntermediateCrate()" src="oneStarIntermediate.png">
+    <img id="intermediateCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyIntermediateCrate()" src="oneStarIntermediate.png">
 </div>
   <div id="advancedCrateBuy" onclick="buyAdvancedCrate()">
-    <img id="advancedCrateBuyImage" onclick="buyAdvancedCrate()" src="oneStarAdvanced.png">
+    <img id="advancedCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyAdvancedCrate()" src="oneStarAdvanced.png">
 </div>
-  <img id="crateShopGoBackGoTo" onclick="crateShopGoBack()" src="goBackArrowImage.png">
+  <img id="crateShopGoBackGoTo" draggable="false" (dragstart)="false;" onclick="crateShopGoBack()" src="goBackArrowImage.png">
   <div id="secretHeHe" onclick="showSecretPlace()"></div>
   <input type="text" id="secretCodeInput">
   <button id="secretCodeSubmit" onclick="checkCheatCode()">Check</button>
-  <img id='showAllShops' onclick="showMainShop()" src="shopImage.png">
-  <img id="goBackToDecider" onclick="hideMainShop()" src="goBackArrowImage.png">
-  <img id="mainClicking" onclick="clicksAdd()" src="pointCursorImage.png">
-    <img id="mainClickingTwo" onclick="clicksAdd()" src="selectCursorImage.png">
-    <img id="titleDisplay" src="titleImage.png">
-    <img id="titleDisplayUnderline" src="underlineImage.png"> 
-    <img id="jamesonCatImage" src="jamesonCat.png">
+  <img id='showAllShops' draggable="false" (dragstart)="false;" onclick="showMainShop()" src="shopImage.png">
+  <img id="goBackToDecider" draggable="false" (dragstart)="false;" onclick="hideMainShop()" src="goBackArrowImage.png">
+  <img id="mainClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="pointCursorImage.png">
+    <img id="mainClickingTwo" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="selectCursorImage.png">
+    <img id="BrokenClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="brokenFingerCursor.png">
+    <img id="titleDisplay" draggable="false" (dragstart)="false;" src="titleImage.png">
+    <img id="titleDisplayUnderline" draggable="false" (dragstart)="false;" src="underlineImage.png"> 
+    <img id="creditsImage" draggable="false" (dragstart)="false;" src="creditsImage.png">
+    <img id="jamesonCatImage" draggable="false" (dragstart)="false;" src="jamesonCat.png">
     <div class="basicInfoBoxRight">
         <p id="playerNameInfo">
         </p>
@@ -415,12 +503,11 @@
         <p id="clickPowerInfo">
         </p>
 
-        <p id="womenInteractionsInfo">
-            0
+        <p id="prestigeCounterInfo">
         </p>
     </div>
 </body>
-<script src="clickingAnimation.js"></script>
+<script src="clickingAnimation.javascript"></script>
 <script>
 
 
@@ -429,12 +516,20 @@ var playerNameInfoDisplay = document.getElementById('playerNameInfo');
 var autoIncomeInfoDisplay = document.getElementById('autoIncomeInfo');
 var clickPowerInfoDisplay = document.getElementById('clickPowerInfo');
 var womenInteractionsInfoDisplay = document.getElementById('womenInteractionsInfo');
+var prestigeCounterInfoDisplay = document.getElementById('prestigeCounterInfo');
+var infoBoxDisplay = document.querySelector('.basicInfoBoxRight');
+var infoBoxNumberVarHolder = 0;
+var infoImage = document.getElementById('infoImageThing');
+var changeLogWHOLE = document.querySelector('.changeLogBox');
 
 var clickPower = 1;
+var prestigeCountREAL = 1;
+var prestigeCount = prestigeCountREAL -= 1;
 
 var title = document.getElementById('titleDisplay');
 var titleUnderline = document.getElementById('titleDisplayUnderline');
 var jmson = document.getElementById('jamesonCatImage');
+var creditsImageDisplay = document.getElementById('creditsImage');
 
 var mainClickingButton = document.getElementById('mainClicking');
 var mainClickingButtonTwo = document.getElementById('mainClickingTwo')
@@ -594,6 +689,13 @@ function getRandomInRange(min, max) {
 
 
 
+function closeChangeLog() {
+    changeLogWHOLE.style.display = 'none';
+}
+
+
+
+
 function clicksAdd() {
     moneyAmount++;
 }
@@ -636,14 +738,18 @@ function checkCheatCode() {
 function playerNameSave() {
   
   //Hiding the Player Name input box and Player Name Button.
-  playerNameinput.style.display = 'none';
-  playerNameButton.style.display = 'none';
 
-  namePlate.innerText = 'Name: ' + playerName.value;
+  if(playerName.value === '' || "") {
+    alert('You need to put a name in!');
+  }
+  else{
+    playerNameinput.style.display = 'none';
+  playerNameButton.style.display = 'none';
   
   decideWhatToDo();
 
-  playerNameInfoDisplay = playerName.value;
+  playerNameInfoDisplay.innerText = "Player Name: " + playerName.value;
+  }
 
   if(playerName.value === "jameson" || playerName.value === 'Jameson') {
     womenInteractionsInfoDisplay.innerText = '-1';
@@ -711,9 +817,7 @@ function playerNameSave() {
         }, 200);
     }, 200);
   }
-  else if(playerName.value == 'brett' || playerName.value == 'Brett') {
-    womenInteractionsInfoDisplay.innerText = '0.5';
-  }
+  infoImage.style.display = 'initial';
 }
 
 
@@ -726,62 +830,82 @@ function showMainMenu() {
     setTimeout(function() {
         title.style.opacity = '100%'
         titleUnderline.style.opacity = '100%'
+        creditsImageDisplay.style.opacity = '100%'
         setTimeout(function() {
             title.style.opacity = '0%'
             titleUnderline.style.opacity = '0%'
+            creditsImageDisplay.style.opacity = '0%'
             setTimeout(function() {
                 title.style.opacity = '100%'
                 titleUnderline.style.opacity = '100%'
+                creditsImageDisplay.style.opacity = '100%'
                 setTimeout(function() {
                     title.style.opacity = '0%'
                     titleUnderline.style.opacity = '0%'
+                    creditsImageDisplay.style.opacity = '0%'
                     setTimeout(function() {
                         title.style.opacity = '100%'
                         titleUnderline.style.opacity = '100%'
+                        creditsImageDisplay.style.opacity = '100%'
                         setTimeout(function() {
                             title.style.opacity = '0%'
                             titleUnderline.style.opacity = '0%'
+                            creditsImageDisplay.style.opacity = '0%'
                             setTimeout(function() {
                                 title.style.opacity = '100%'
                                 titleUnderline.style.opacity = '100%'
+                                creditsImageDisplay.style.opacity = '100%'
                                 setTimeout(function() {
                                     title.style.opacity = '0%'
                                     titleUnderline.style.opacity = '0%'
+                                    creditsImageDisplay.style.opacity = '0%'
                                     setTimeout(function() {
                                         title.style.opacity = '100%'
                                         titleUnderline.style.opacity = '100%'
+                                        creditsImageDisplay.style.opacity = '100%'
                                         setTimeout(function() {
                                             title.style.opacity = '90%'
                                             titleUnderline.style.opacity = '90%'
+                                            creditsImageDisplay.style.opacity = '90%'
                                             setTimeout(function() {
                                                 title.style.opacity = '80%'
                                                 titleUnderline.style.opacity = '80%'
+                                                creditsImageDisplay.style.opacity = '80%'
                                                 setTimeout(function() {
                                                     title.style.opacity = '70%'
                                                     titleUnderline.style.opacity = '70%'
+                                                    creditsImageDisplay.style.opacity = '70%'
                                                     setTimeout(function() {
                                                         title.style.opacity = '60%'
                                                         titleUnderline.style.opacity = '60%'
+                                                        creditsImageDisplay.style.opacity = '60%'
                                                         setTimeout(function() {
                                                             title.style.opacity = '50%'
                                                             titleUnderline.style.opacity = '50%'
+                                                            creditsImageDisplay.style.opacity = '50%'
                                                             setTimeout(function() {
                                                                 title.style.opacity = '40%'
                                                                 titleUnderline.style.opacity = '40%'
+                                                                creditsImageDisplay.style.opacity = '40%'
                                                                 setTimeout(function() {
                                                                     title.style.opacity = '30%'
                                                                     titleUnderline.style.opacity = '30%'
+                                                                    creditsImageDisplay.style.opacity = '30%'
                                                                     setTimeout(function() {
                                                                         title.style.opacity = '20%'
                                                                         titleUnderline.style.opacity = '20%'
+                                                                        creditsImageDisplay.style.opacity = '20%'
                                                                         setTimeout(function() {
                                                                             title.style.opacity = '10%'
                                                                             titleUnderline.style.opacity = '10%'
+                                                                            creditsImageDisplay.style.opacity = '10%'
                                                                             setTimeout(function() {
                                                                                 title.style.opacity = '0%'
                                                                                 titleUnderline.style.opacity = '0%'
+                                                                                creditsImageDisplay.style.opacity = '0%'
                                                                                 title.style.display = 'none';
                                                                                 titleUnderline.style.display = 'none';
+                                                                                creditsImageDisplay.style.display = 'none';
                                                                             }, 125);
                                                                         }, 125);
                                                                     }, 125);
@@ -907,6 +1031,20 @@ function autoMenuHide() {
     automatedClicksONEButton.style.display = 'none';
     autoGoBackButton.style.display = 'none';
     upgradeClicksButton.style.display = 'initial';
+}
+
+
+
+
+function infoBoxOpen() {
+    if (infoBoxNumberVarHolder == 0) {
+        infoBoxDisplay.style.display = 'initial';
+        infoBoxNumberVarHolder++;
+    }
+    else {
+        infoBoxDisplay.style.display = 'none';
+        infoBoxNumberVarHolder = 0;
+    }
 }
 
 
@@ -1061,10 +1199,11 @@ function buyAdvancedCrate() {
 
 
 function update() {
-    alert("WARNING:    DATA WILL BE RESET ON REFRESH OR LEAVING. So if you plan on playing this longer, DON'T REFRESH OR LEAVE THE PAGE!!!")
+    //alert("WARNING:    DATA WILL BE RESET ON REFRESH OR LEAVING. So if you plan on playing this longer, DON'T REFRESH OR LEAVE THE PAGE!!!");
     setInterval(function() {
-        clickPowerInfoDisplay.innerText = clickPower.value;
-        autoIncomeInfoDisplay.innerText = automatedIncome.value;
+        clickPowerInfoDisplay.innerText = 'Click Power: ' + clickPower;
+        autoIncomeInfoDisplay.innerText = 'Automatic Income: ' + automatedIncome;
+        prestigeCounterInfoDisplay.innerText = 'Prestige Count: ' + prestigeCount;
         moneyShow.innerText = 'Clicks: ' + moneyAmountShow;
         automatedIncome = automatedIncomeBasic + automatedIncomeIntermediate + automatedIncomeAdvanced;
     },1);
