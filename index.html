@@ -515,7 +515,6 @@
 var playerNameInfoDisplay = document.getElementById('playerNameInfo');
 var autoIncomeInfoDisplay = document.getElementById('autoIncomeInfo');
 var clickPowerInfoDisplay = document.getElementById('clickPowerInfo');
-var womenInteractionsInfoDisplay = document.getElementById('womenInteractionsInfo');
 var prestigeCounterInfoDisplay = document.getElementById('prestigeCounterInfo');
 var infoBoxDisplay = document.querySelector('.basicInfoBoxRight');
 var infoBoxNumberVarHolder = 0;
@@ -752,7 +751,6 @@ function playerNameSave() {
   }
 
   if(playerName.value === "jameson" || playerName.value === 'Jameson') {
-    womenInteractionsInfoDisplay.innerText = '-1';
     jmson.style.opacity = '0%'
     jmson.style.display = 'initial'
     setTimeout(function() {
