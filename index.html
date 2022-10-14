@@ -515,6 +515,7 @@
         <p id="prestigeCounterInfo">
         </p>
     </div>
+    <audio autoplay id="jazzMoosic" src="jaz.mp3" type="audio/mpeg"></audio>
 </body>
 <script src="clickingAnimation.javascript"></script>
 <script>
@@ -747,20 +748,13 @@ function playerNameSave() {
   
   //Hiding the Player Name input box and Player Name Button.
 
-  if(playerName.value === '' || "") {
+  if(playerName.value === '' ||playerName.value === "") {
     alert('You need to put a name in!');
   }
   else{
     playerNameinput.style.display = 'none';
-  playerNameButton.style.display = 'none';
-  
-  decideWhatToDo();
-
+    playerNameButton.style.display = 'none';
   playerNameInfoDisplay.innerText = "Player Name: " + playerName.value;
-  }
-
-  if(playerName.value === "jaedyn" || planerName.value === "Jaedyn") {
-    alert('Ew! Grooossssssssss!');
   }
 
   if(playerName.value === "jameson" || playerName.value === 'Jameson') {
@@ -806,7 +800,8 @@ function playerNameSave() {
                                                                                 jmson.style.opacity = '10%'
                                                                                 setTimeout(function() {
                                                                                     jmson.style.opacity = '0%'
-                                                                                    jmson.style.display = 'none'
+                                                                                    jmson.style.display = 'none';
+                                                                                    decideWhatToDo();
                                                                                 }, 200);
                                                                             }, 200);
                                                                         }, 200);
@@ -1064,7 +1059,7 @@ function infoBoxOpen() {
 function showCrateShop() {
     hideMainShop();
     shopMenuButton.style.display = 'none';
-    basicCrateButton.style.display = 'initial';
+    basicCraateButton.style.display = 'initial';
     intermediateCrateButton.style.display = 'initial';
     advancedCrateButton.style.display = 'initial';
     crateShopGoBackButton.style.display = 'initial';
