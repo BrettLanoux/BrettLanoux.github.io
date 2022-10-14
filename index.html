@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" 
+    type="image/png" 
+    href="logo.png">
   <meta charset="UTF-8">
   <title>Brett's Game</title>
   <style>
@@ -150,8 +153,8 @@
     #secretCodeInput {
         display: none;
         position: absolute;
-      left: 22px;
-      top: 22px;
+        left: 22px;
+        top: 22px;
         padding: 14px 40px;
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
@@ -162,8 +165,8 @@
     #secretCodeSubmit {
         display: none;
         position: absolute;
-      left: 22px;
-      top: 22px;
+        left: 261px;
+        top: 22px;
         padding: 14px 40px;
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
@@ -187,13 +190,6 @@
         height: 36px;
         padding: 5px 5px 5px 5px;
         border: 3px solid rgb(0, 0, 0);
-    }
-
-    #nameDisplay {
-        position: absolute;
-        right: 32px;
-        top: 15px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     #mainClickingTwo {
@@ -358,6 +354,17 @@
         top: 60px;
         left: 330px;
     }
+    .basicInfoBoxRight {
+        display: initial;
+        position: absolute;
+        height: 350px;
+        width: 250px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 5px 5px 5px 5px;
+        background-color: white;
+        padding: 5px 5px 5px 5px;
+        border: 3px solid rgb(0, 0, 0);
+    }
   </style>
 </head>
 <body onload="update(), moneyUpdate(), autoMoneyUpdate()" class="container">
@@ -366,7 +373,6 @@
     <div id="topBorder"></div>
     <div id="bottomBorder"></div>
     <div id="borderFiller"></div>
-    <p id="nameDisplay"></p>
     <p id="moneyDisplay"></p>
     <button id="startButton" onclick="showMainMenu()">Start Game</button>
   <input type="text" id='playerNameID' placeholder="Player Name...">
@@ -399,11 +405,32 @@
     <img id="titleDisplay" src="titleImage.png">
     <img id="titleDisplayUnderline" src="underlineImage.png"> 
     <img id="jamesonCatImage" src="jamesonCat.png">
+    <div class="basicInfoBoxRight">
+        <p id="playerNameInfo">
+        </p>
+
+        <p id="autoIncomeInfo">
+        </p>
+
+        <p id="clickPowerInfo">
+        </p>
+
+        <p id="womenInteractionsInfo">
+            0
+        </p>
+    </div>
 </body>
 <script src="clickingAnimation.js"></script>
 <script>
 
 
+
+var playerNameInfoDisplay = document.getElementById('playerNameInfo');
+var autoIncomeInfoDisplay = document.getElementById('autoIncomeInfo');
+var clickPowerInfoDisplay = document.getElementById('clickPowerInfo');
+var womenInteractionsInfoDisplay = document.getElementById('womenInteractionsInfo');
+
+var clickPower = 1;
 
 var title = document.getElementById('titleDisplay');
 var titleUnderline = document.getElementById('titleDisplayUnderline');
@@ -418,8 +445,7 @@ var shopMenuButton = document.getElementById('showAllShops');
 
 var playerNameinput = document.getElementById('playerNameID');
 var playerNameButton = document.getElementById('playerNameSubmit');
-var playerName = playerNameinput; //console.log(playerName.value);
-var namePlate = document.getElementById('nameDisplay');
+var playerName = playerNameinput //console.log(playerName.value);
 
 var upgradeButton = document.getElementById('upgradesGoTo');
 var autoMenuButton = document.getElementById('autoMain');
@@ -469,7 +495,7 @@ var prestigeMultiplier = 1;
 var automatedIncomeBasic = 0;
 var automatedIncomeIntermediate = 0;
 var automatedIncomeAdvanced = 0;
-var automatedIncomeBasicPrice = 10**1.07;
+var automatedIncomeBasicPrice = 10;
 var automatedIncomeIntermediatePrice;
 var automatedIncomeAdvancedPrice;
 var automatedIncome;
@@ -599,6 +625,9 @@ function checkCheatCode() {
     if (secretCodeTypeyThing.value == 'wednesday') {
         moneyAmount += 99999999999999999999999999999999999999999999999999999999999999999999999999;
     }
+    else if (secretCodeTypeyThing.value == 'G+B') {
+        alert('HeHe she said so lol');
+    }
 }
 
 
@@ -614,7 +643,10 @@ function playerNameSave() {
   
   decideWhatToDo();
 
-  if(playerName.value === "jameson") {
+  playerNameInfoDisplay = playerName.value;
+
+  if(playerName.value === "jameson" || playerName.value === 'Jameson') {
+    womenInteractionsInfoDisplay.innerText = '-1';
     jmson.style.opacity = '0%'
     jmson.style.display = 'initial'
     setTimeout(function() {
@@ -638,36 +670,36 @@ function playerNameSave() {
                                         setTimeout(function() {
                                             jmson.style.opacity = '100%'
                                             setTimeout(function() {
-                                            jmson.style.opacity = '90%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '80%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '70%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '60%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '50%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '40%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '30%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '20%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '10%'
-                                            setTimeout(function() {
-                                            jmson.style.opacity = '0%'
-                                            jmson.style.display = 'none'
-                                        }, 200);
-                                        }, 200);
-                                        }, 200);
-                                        }, 200);
-                                        }, 200);
-                                        }, 200);
-                                        }, 200);
-                                        }, 200);
-                                        }, 200);
-                                        }, 2000);
+                                                jmson.style.opacity = '90%'
+                                                setTimeout(function() {
+                                                    jmson.style.opacity = '80%'
+                                                    setTimeout(function() {
+                                                        jmson.style.opacity = '70%'
+                                                        setTimeout(function() {
+                                                            jmson.style.opacity = '60%'
+                                                            setTimeout(function() {
+                                                                jmson.style.opacity = '50%'
+                                                                setTimeout(function() {
+                                                                    jmson.style.opacity = '40%'
+                                                                    setTimeout(function() {
+                                                                        jmson.style.opacity = '30%'
+                                                                        setTimeout(function() {
+                                                                            jmson.style.opacity = '20%'
+                                                                            setTimeout(function() {
+                                                                                jmson.style.opacity = '10%'
+                                                                                setTimeout(function() {
+                                                                                    jmson.style.opacity = '0%'
+                                                                                    jmson.style.display = 'none'
+                                                                                }, 200);
+                                                                            }, 200);
+                                                                        }, 200);
+                                                                    }, 200);
+                                                                }, 200);
+                                                            }, 200);
+                                                        }, 200);
+                                                    }, 200);
+                                                }, 200);
+                                            }, 2000);
                                         }, 200);
                                     }, 200);
                                 }, 200);
@@ -678,6 +710,9 @@ function playerNameSave() {
             }, 200);
         }, 200);
     }, 200);
+  }
+  else if(playerName.value == 'brett' || playerName.value == 'Brett') {
+    womenInteractionsInfoDisplay.innerText = '0.5';
   }
 }
 
@@ -696,30 +731,25 @@ function showMainMenu() {
             titleUnderline.style.opacity = '0%'
             setTimeout(function() {
                 title.style.opacity = '100%'
-    
                 titleUnderline.style.opacity = '100%'
                 setTimeout(function() {
                     title.style.opacity = '0%'
                     titleUnderline.style.opacity = '0%'
                     setTimeout(function() {
                         title.style.opacity = '100%'
-            
                         titleUnderline.style.opacity = '100%'
                         setTimeout(function() {
                             title.style.opacity = '0%'
                             titleUnderline.style.opacity = '0%'
                             setTimeout(function() {
                                 title.style.opacity = '100%'
-                    
                                 titleUnderline.style.opacity = '100%'
                                 setTimeout(function() {
                                     title.style.opacity = '0%'
                                     titleUnderline.style.opacity = '0%'
                                     setTimeout(function() {
                                         title.style.opacity = '100%'
-                        
                                         titleUnderline.style.opacity = '100%'
-
                                         setTimeout(function() {
                                             title.style.opacity = '90%'
                                             titleUnderline.style.opacity = '90%'
@@ -762,7 +792,6 @@ function showMainMenu() {
                                                 }, 125);
                                             }, 125);
                                         }, 125);
-
                                     }, 200);
                                 }, 200);
                             }, 200);
@@ -913,10 +942,10 @@ function crateShopGoBack() {
 
 
 function buyAutomatedOne() {
-    if (moneyAmount >= automatedIncomeBasicPrice**1.07) {
+    if (moneyAmount >= automatedIncomeBasicPrice) {
         moneyAmount -= automatedIncomeBasicPrice**1.07;
         automatedIncomeBasicPrice = automatedIncomeBasicPrice**1.04;
-        automatedIncomeBasic += 1;
+        automatedIncomeBasic += 0.1;
     }
 }
 
@@ -1032,7 +1061,10 @@ function buyAdvancedCrate() {
 
 
 function update() {
+    alert("WARNING:    DATA WILL BE RESET ON REFRESH OR LEAVING. So if you plan on playing this longer, DON'T REFRESH OR LEAVE THE PAGE!!!")
     setInterval(function() {
+        clickPowerInfoDisplay.innerText = clickPower.value;
+        autoIncomeInfoDisplay.innerText = automatedIncome.value;
         moneyShow.innerText = 'Clicks: ' + moneyAmountShow;
         automatedIncome = automatedIncomeBasic + automatedIncomeIntermediate + automatedIncomeAdvanced;
     },1);
