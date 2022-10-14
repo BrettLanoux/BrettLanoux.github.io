@@ -208,6 +208,22 @@
         width: 60px;
     }
 
+    #semiBrokenClicking {
+        display: none;
+        position: absolute;
+        top: 261px;
+        left: 590px;
+        width: 79px;
+    }
+
+    #BrokenClicking {
+        display: none;
+        position: absolute;
+        width: 75px;
+        top: 269px;
+        left: 596px;
+    }
+
     #goBackClicker {
         display: none;
         position: absolute;
@@ -383,14 +399,6 @@
         width: 120px;
     }
 
-    #BrokenClicking {
-        display: none;
-        position: absolute;
-        width: 75px;
-        top: 269px;
-        left: 596px;
-    }
-
     .changeLogBox {
         position: absolute;
         left: 22px;
@@ -488,7 +496,8 @@
   <img id="goBackToDecider" draggable="false" (dragstart)="false;" onclick="hideMainShop()" src="goBackArrowImage.png">
   <img id="mainClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="pointCursorImage.png">
     <img id="mainClickingTwo" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="selectCursorImage.png">
-    <img id="BrokenClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="brokenFingerCursor.png">
+    <img id="semiBrokenClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="semibrokenFingerCursor.png">
+    <img id="BrokenClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="BrokenFingerCursor.png">
     <img id="titleDisplay" draggable="false" (dragstart)="false;" src="titleImage.png">
     <img id="titleDisplayUnderline" draggable="false" (dragstart)="false;" src="underlineImage.png"> 
     <img id="creditsImage" draggable="false" (dragstart)="false;" src="creditsImage.png">
@@ -748,6 +757,10 @@ function playerNameSave() {
   decideWhatToDo();
 
   playerNameInfoDisplay.innerText = "Player Name: " + playerName.value;
+  }
+
+  if(playerName.value === "jaedyn" || planerName.value === "Jaedyn") {
+    alert('Ew! Grooossssssssss!');
   }
 
   if(playerName.value === "jameson" || playerName.value === 'Jameson') {
