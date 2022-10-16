@@ -5,6 +5,8 @@
     type="image/png" 
     href="logo.png">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1920px">
   <title>Brett's Game</title>
   <style>
     
@@ -440,25 +442,25 @@
     <div class="changeLogBox">
         <img id="exitChangeLog" draggable="false" (dragstart)="false;" onclick="closeChangeLog()" src="xImage.png">
         <h1 id="changeLogTitle">
-            *CHANGE LOG* 10/14/22
+            *CHANGE LOG* 10/16/22
         </h1>
         <p class="changeLogText">
-            Added a new clicker if you hold it down for 3+ seconds.
+            Added Click Power Upgrade
         </p>
 
         <p class="changeLogText">
-            Added info box at the bottom right(Click the info symbol).
+            Possibly Fixed Resoulution issues on other monitor sizes
         </p>
 
         <p class="changeLogText">
-            Added 'Made by Brett' to the title.
+            Died inside from extreme boredom and heart-ache
         </p>
 
         <p class="changeLogText">
-            DO NOT NAME YOURSELF 'jameson'!!!!!!!!!
+            DO NOT NAME YOURSELF 'jaedyn'!!!!!!!!!
         </p>
         <p class="changeLogText">
-            Added Change Log
+            Carrot Sticks
         </p>
     </div>
 <div id="leftBorder"></div>
@@ -494,10 +496,10 @@
   <button id="secretCodeSubmit" onclick="checkCheatCode()">Check</button>
   <img id='showAllShops' draggable="false" (dragstart)="false;" onclick="showMainShop()" src="shopImage.png">
   <img id="goBackToDecider" draggable="false" (dragstart)="false;" onclick="hideMainShop()" src="goBackArrowImage.png">
-  <img id="mainClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="pointCursorImage.png">
-    <img id="mainClickingTwo" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="selectCursorImage.png">
-    <img id="semiBrokenClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="semibrokenFingerCursor.png">
-    <img id="BrokenClicking" draggable="false" (dragstart)="false;" onclick="clicksAdd()" src="BrokenFingerCursor.png">
+  <img id="mainClicking" draggable="false" (dragstart)="false;" src="pointCursorImage.png">
+    <img id="mainClickingTwo" draggable="false" (dragstart)="false;" src="selectCursorImage.png">
+    <img id="semiBrokenClicking" draggable="false" (dragstart)="false;" src="semibrokenFingerCursor.png">
+    <img id="BrokenClicking" draggable="false" (dragstart)="false;" src="BrokenFingerCursor.png">
     <img id="titleDisplay" draggable="false" (dragstart)="false;" src="titleImage.png">
     <img id="titleDisplayUnderline" draggable="false" (dragstart)="false;" src="underlineImage.png"> 
     <img id="creditsImage" draggable="false" (dragstart)="false;" src="creditsImage.png">
@@ -515,9 +517,7 @@
         <p id="prestigeCounterInfo">
         </p>
     </div>
-    <audio id="jazMoozic" src="jaz.mp3"></audio>
 </body>
-<script src="clickingAnimation.javascript"></script>
 <script>
 
 
@@ -531,7 +531,7 @@ var infoBoxNumberVarHolder = 0;
 var infoImage = document.getElementById('infoImageThing');
 var changeLogWHOLE = document.querySelector('.changeLogBox');
 
-var clickPower = 10;
+var clickPower = 1;
 var prestigeCountREAL = 1;
 var prestigeCount = prestigeCountREAL -= 1;
 
@@ -556,6 +556,9 @@ var autoMenuButton = document.getElementById('autoMain');
 var automatedClicksONEButton = document.getElementById('upgradeAutomatedOne');
 var autoGoBackButton = document.getElementById('autoGoBack');
 var upgradeClicksButton = document.getElementById('upgradeClicks');
+
+var betterClicksPrice = 50;
+var betterClicksCounter = 0;
 
 var crateButton = document.getElementById('cratesGoTo');
 var prestigeButton = document.getElementById('prestigeGoTo');
@@ -705,13 +708,6 @@ function closeChangeLog() {
 
 
 
-function clicksAdd() {
-    moneyAmount += (clickPower * 1);
-}
-
-
-
-
 function showSecretPlace() {
     if (secretButtonNumber == 0) {
         upgradeShopGoBack.style.display = 'none';
@@ -755,6 +751,7 @@ function playerNameSave() {
     playerNameinput.style.display = 'none';
     playerNameButton.style.display = 'none';
   playerNameInfoDisplay.innerText = "Player Name: " + playerName.value;
+  decideWhatToDo();
   }
 
   if (playerName.value === 'jaedyn' || playerName.value === 'Jaedyn') {
@@ -826,10 +823,10 @@ function playerNameSave() {
             }, 200);
         }, 200);
     }, 200);
-  }
-  setTimeout(function() {
+    setTimeout(function() {
     decideWhatToDo();
   }, 6000);
+  }
   infoImage.style.display = 'initial';
 }
 
@@ -1009,6 +1006,17 @@ function showUpgradeShop() {
   autoMenuButton.style.display = 'initial';
   automatedClicksONEButton.style.display = 'none';
   upgradeClicksButton.style.display = 'initial';
+}
+
+
+
+
+function betterClicks() {
+        if (moneyAmount >= betterClicksPrice) {
+            moneyAmount -= betterClicksPrice;
+            betterClicksPrice = betterClicksPrice**1.04;
+            clickPower++;
+        }
 }
 
 
@@ -1252,5 +1260,31 @@ function autoMoneyUpdate() {
         }
     }, 1000);
 }
+</script>
+<script>
+    var mC2 = document.getElementById('mainClickingTwo');
+var bmC = document.getElementById('semiBrokenClicking');
+var bmC2 = document.getElementById('BrokenClicking');
+
+var mouseStatus = 'up';
+var mouseTimeout;
+var mC = document.getElementById('mainClicking');
+mC.addEventListener("mousedown",function() {
+    clearTimeout(mouseTimeout);
+    mC.style.display = 'none';
+    mC2.style.display = 'initial';
+    mouseStatus='down';
+    moneyAmount += clickPower;
+    mouseTimeout = setTimeout(function(){
+        mouseStatus='longDown';
+        doSpecialStuffBecauseOfLongDown(); // put your secret sauce here
+    }, 3000);
+}, false);
+mC2.addEventListener("mouseup",function() {
+    clearTimeout(mouseTimeout);
+    mC.style.display = 'initial';
+    mC2.style.display = 'none';
+    mouseStatus='up';
+}, false);
 </script>
 </html>
