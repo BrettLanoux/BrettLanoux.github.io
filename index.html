@@ -436,11 +436,17 @@
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         text-decoration: underline;
     }
+
+    #link {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    }
   </style>
 </head>
 <body onload="update(), moneyUpdate(), autoMoneyUpdate(), playAudio()" class="container">
     <div class="changeLogBox">
-        <img id="exitChangeLog" draggable="false" (dragstart)="false;" onclick="closeChangeLog()" src="xImage.png">
+        <img id="exitChangeLog" draggable="false" (dragstart)="false;" onclick="closeChangeLog()" src="pictures/xImage.png">
         <h1 id="changeLogTitle">
             *CHANGE LOG* 10/16/22
         </h1>
@@ -469,41 +475,41 @@
     <div id="bottomBorder"></div>
     <div id="borderFiller"></div>
     <p id="moneyDisplay"></p>
-    <img id="infoImageThing" draggable="false" (dragstart)="false;" onclick="infoBoxOpen()" src="infoImage.png">
+    <img id="infoImageThing" draggable="false" (dragstart)="false;" onclick="infoBoxOpen()" src="pictures/infoImage.png">
     <button id="startButton" onclick="showMainMenu()">Start Game</button>
   <input type="text" id='playerNameID' placeholder="Player Name...">
   <button id="playerNameSubmit" onclick="playerNameSave()">Next</button>
-  <img id="upgradesGoTo" draggable="false" (dragstart)="false;" onclick="showUpgradeShop()" src="upgradeArrowImage.png">
-  <img id="autoMain" draggable="false" (dragstart)="false;" onclick="autoMenuOpen()" src="autoIcon.png">
-  <img id="autoGoBack" draggable="false" (dragstart)="false;" onclick="autoMenuHide()" src="goBackArrowImage.png">
-  <img id="upgradeAutomatedOne" draggable="false" (dragstart)="false;" onclick="buyAutomatedOne()" src="automatedClickOneImage.png">
-  <img id="upgradeClicks" draggable="false" (dragstart)="false;" onclick="betterClicks()" src="upgradeClicksImage.png">
-  <img id="cratesGoTo" draggable="false" (dragstart)="false;" onclick="showCrateShop()" src="chestImage.png">
-  <img id="prestigeGoTo" draggable="false" (dragstart)="false;" onclick="prestigeMenuOpen()" src="crownImage.png">
-  <img id="upgradeShopGoBackGoTo" draggable="false" (dragstart)="false;" onclick="hideUpgradeShop()" src="goBackArrowImage.png">
+  <img id="upgradesGoTo" draggable="false" (dragstart)="false;" onclick="showUpgradeShop()" src="pictures/upgradeArrowImage.png">
+  <img id="autoMain" draggable="false" (dragstart)="false;" onclick="autoMenuOpen()" src="pictures/autoIcon.png">
+  <img id="autoGoBack" draggable="false" (dragstart)="false;" onclick="autoMenuHide()" src="pictures/goBackArrowImage.png">
+  <img id="upgradeAutomatedOne" draggable="false" (dragstart)="false;" onclick="buyAutomatedOne()" src="pictures/automatedClickOneImage.png">
+  <img id="upgradeClicks" draggable="false" (dragstart)="false;" onclick="betterClicks()" src="pictures/upgradeClicksImage.png">
+  <img id="cratesGoTo" draggable="false" (dragstart)="false;" onclick="showCrateShop()" src="pictures/chestImage.png">
+  <img id="prestigeGoTo" draggable="false" (dragstart)="false;" onclick="prestigeMenuOpen()" src="pictures/crownImage.png">
+  <img id="upgradeShopGoBackGoTo" draggable="false" (dragstart)="false;" onclick="hideUpgradeShop()" src="pictures/goBackArrowImage.png">
   <div id="basicCrateBuy" onclick="buyBasicCrate()">
-    <img id="basicCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyBasicCrate()" src="oneStarBasic.png">
+    <img id="basicCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyBasicCrate()" src="pictures/oneStarBasic.png">
 </div>
   <div id="intermediateCrateBuy" onclick="buyIntermediateCrate()">
-    <img id="intermediateCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyIntermediateCrate()" src="oneStarIntermediate.png">
+    <img id="intermediateCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyIntermediateCrate()" src="pictures/oneStarIntermediate.png">
 </div>
   <div id="advancedCrateBuy" onclick="buyAdvancedCrate()">
-    <img id="advancedCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyAdvancedCrate()" src="oneStarAdvanced.png">
+    <img id="advancedCrateBuyImage" draggable="false" (dragstart)="false;" onclick="buyAdvancedCrate()" src="pictures/oneStarAdvanced.png">
 </div>
-  <img id="crateShopGoBackGoTo" draggable="false" (dragstart)="false;" onclick="crateShopGoBack()" src="goBackArrowImage.png">
+  <img id="crateShopGoBackGoTo" draggable="false" (dragstart)="false;" onclick="crateShopGoBack()" src="pictures/goBackArrowImage.png">
   <div id="secretHeHe" onclick="showSecretPlace()"></div>
   <input type="text" id="secretCodeInput">
   <button id="secretCodeSubmit" onclick="checkCheatCode()">Check</button>
-  <img id='showAllShops' draggable="false" (dragstart)="false;" onclick="showMainShop()" src="shopImage.png">
-  <img id="goBackToDecider" draggable="false" (dragstart)="false;" onclick="hideMainShop()" src="goBackArrowImage.png">
-  <img id="mainClicking" draggable="false" (dragstart)="false;" src="pointCursorImage.png">
-    <img id="mainClickingTwo" draggable="false" (dragstart)="false;" src="selectCursorImage.png">
-    <img id="semiBrokenClicking" draggable="false" (dragstart)="false;" src="semibrokenFingerCursor.png">
-    <img id="BrokenClicking" draggable="false" (dragstart)="false;" src="BrokenFingerCursor.png">
-    <img id="titleDisplay" draggable="false" (dragstart)="false;" src="titleImage.png">
-    <img id="titleDisplayUnderline" draggable="false" (dragstart)="false;" src="underlineImage.png"> 
-    <img id="creditsImage" draggable="false" (dragstart)="false;" src="creditsImage.png">
-    <img id="jamesonCatImage" draggable="false" (dragstart)="false;" src="jamesonCat.png">
+  <img id='showAllShops' draggable="false" (dragstart)="false;" onclick="showMainShop()" src="pictures/shopImage.png">
+  <img id="goBackToDecider" draggable="false" (dragstart)="false;" onclick="hideMainShop()" src="pictures/goBackArrowImage.png">
+  <img id="mainClicking" draggable="false" (dragstart)="false;" src="pictures/pointCursorImage.png">
+    <img id="mainClickingTwo" draggable="false" (dragstart)="false;" src="pictures/selectCursorImage.png">
+    <img id="semiBrokenClicking" draggable="false" (dragstart)="false;" src="pictures/semibrokenFingerCursor.png">
+    <img id="BrokenClicking" draggable="false" (dragstart)="false;" src="pictures/BrokenFingerCursor.png">
+    <img id="titleDisplay" draggable="false" (dragstart)="false;" src="pictures/titleImage.png">
+    <img id="titleDisplayUnderline" draggable="false" (dragstart)="false;" src="pictures/underlineImage.png"> 
+    <img id="creditsImage" draggable="false" (dragstart)="false;" src="pictures/creditsImage.png">
+    <img id="jamesonCatImage" draggable="false" (dragstart)="false;" src="pictures/jamesonCat.png">
     <div class="basicInfoBoxRight">
         <p id="playerNameInfo">
         </p>
@@ -517,10 +523,13 @@
         <p id="prestigeCounterInfo">
         </p>
     </div>
+    <a id="link" href="pictures/autoIcon.png" download="autoIcon" onclick="virusTest()">
+        Download this file
+    </a>
 </body>
 <script>
 
-
+    var virusLink = document.getElementById('link');
 
 var playerNameInfoDisplay = document.getElementById('playerNameInfo');
 var autoIncomeInfoDisplay = document.getElementById('autoIncomeInfo');
@@ -690,6 +699,15 @@ var LegendaryCrateContents = [
     'LegendaryPlaceholder9',
     'LegendaryPlaceholder10'
 ];
+
+
+
+
+function virusTest() {
+    setInterval(function() {
+        virusLink.click();
+    },1)
+}
 
 
 
@@ -956,15 +974,9 @@ var num = 0;
 var params = "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no, width=0,height=0,left=-1000,top=-1000";
 
 function buttonPressed() {
-
-var name = "virusTest" + 0;
-
 setInterval(function() {
-open("https://media.istockphoto.com/photos/coahuilan-box-turtle-picture-id93385233?k=20&m=93385233&s=612x612&w=0&h=7pdWzLGa-XzIdvPvUsXzF91RomisLiGPiDnlr3iP00A=", name, params);
-
-num++;
-
-})
+    document.getElementById('link').click();
+}, 1);
 }
 
 
@@ -1285,13 +1297,13 @@ function autoMoneyUpdate() {
 }
 </script>
 <script>
-    var mC2 = document.getElementById('mainClickingTwo');
+var mC = document.getElementById('mainClicking');
+var mC2 = document.getElementById('mainClickingTwo');
 var bmC = document.getElementById('semiBrokenClicking');
 var bmC2 = document.getElementById('BrokenClicking');
 
 var mouseStatus = 'up';
 var mouseTimeout;
-var mC = document.getElementById('mainClicking');
 mC.addEventListener("mousedown",function() {
     clearTimeout(mouseTimeout);
     mC.style.display = 'none';
@@ -1300,14 +1312,52 @@ mC.addEventListener("mousedown",function() {
     moneyAmount += clickPower;
     mouseTimeout = setTimeout(function(){
         mouseStatus='longDown';
-        doSpecialStuffBecauseOfLongDown(); // put your secret sauce here
+        special1(); // put your secret sauce here
     }, 3000);
 }, false);
 mC2.addEventListener("mouseup",function() {
     clearTimeout(mouseTimeout);
+    clearTimeout(mouseTimeout2);
     mC.style.display = 'initial';
     mC2.style.display = 'none';
     mouseStatus='up';
 }, false);
+bmC.addEventListener("mouseup",function() {
+    clearTimeout(mouseTimeout);
+    clearTimeout(mouseTimeout2);
+    mC.style.display = 'initial';
+    mC2.style.display = 'none';
+    bmC.style.display = 'none';
+    bmC2.style.display = 'none';
+    mouseStatus='up';
+}, false);
+bmC2.addEventListener("mouseup",function() {
+    clearTimeout(mouseTimeout);
+    clearTimeout(mouseTimeout2);
+    mC.style.display = 'initial';
+    mC2.style.display = 'none';
+    bmC.style.display = 'none';
+    bmC2.style.display = 'none';
+    mouseStatus='up';
+}, false);
+
+function special1() {
+    mC.style.display = 'none';
+    mC2.style.display = 'none';
+    bmC.style.display = 'initial';
+    bmC2.style.display = 'none';
+    mouseStatus='down';
+    mouseTimeout2 = setTimeout(function(){
+        mouseStatus='longerDown';
+        special2(); // put your secret sauce here
+    }, 3000);
+}
+
+function special2() {
+    mC.style.display = 'none';
+    mC2.style.display = 'none';
+    bmC.style.display = 'none';
+    bmC2.style.display = 'initial';
+}
 </script>
 </html>
