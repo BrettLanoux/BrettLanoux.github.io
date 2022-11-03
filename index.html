@@ -442,6 +442,13 @@
         left: 50px;
         top: 50px;
     }
+
+    #heartImage {
+        position: absolute;
+        top: 0px;
+        left: 379px;
+        display: none;
+    }
   </style>
 </head>
 <body onload="update(), moneyUpdate(), autoMoneyUpdate(), playAudio()" class="container">
@@ -510,6 +517,7 @@
     <img id="titleDisplayUnderline" draggable="false" (dragstart)="false;" src="pictures/underlineImage.png"> 
     <img id="creditsImage" draggable="false" (dragstart)="false;" src="pictures/creditsImage.png">
     <img id="jamesonCatImage" draggable="false" (dragstart)="false;" src="pictures/jamesonCat.png">
+    <img id="heartImage" draggable="false" (dragstart)="false;" src="pictures/heart.png">
     <div class="basicInfoBoxRight">
         <p id="playerNameInfo">
         </p>
@@ -523,11 +531,10 @@
         <p id="prestigeCounterInfo">
         </p>
     </div>
-    <a id="link" href="pictures/autoIcon.png" download="autoIcon" onclick="virusTest()">
-        Download this file
-    </a>
 </body>
 <script>
+
+    var genHeart = document.getElementById('heartImage');
 
     var virusLink = document.getElementById('link');
 
@@ -778,6 +785,76 @@ function playerNameSave() {
 
   if(playerName.value === 'jack' || playerName.value == 'Jack') {
     buttonPressed();
+  }
+
+  if(playerName.value === "genavive" || playerName.value === 'Genavive') {
+    genHeart.style.opacity = '0%'
+    genHeart.style.display = 'initial'
+    setTimeout(function() {
+        genHeart.style.opacity = '10%'
+        setTimeout(function() {
+            genHeart.style.opacity = '20%'
+            setTimeout(function() {
+                genHeart.style.opacity = '30%'
+                setTimeout(function() {
+                    genHeart.style.opacity = '40%'
+                    setTimeout(function() {
+                        genHeart.style.opacity = '50%'
+                        setTimeout(function() {
+                            genHeart.style.opacity = '60%'
+                            setTimeout(function() {
+                                genHeart.style.opacity = '70%'
+                                setTimeout(function() {
+                                    genHeart.style.opacity = '80%'
+                                    setTimeout(function() {
+                                        genHeart.style.opacity = '90%'
+                                        setTimeout(function() {
+                                            genHeart.style.opacity = '100%'
+                                            setTimeout(function() {
+                                                genHeart.style.opacity = '90%'
+                                                setTimeout(function() {
+                                                    genHeart.style.opacity = '80%'
+                                                    setTimeout(function() {
+                                                        genHeart.style.opacity = '70%'
+                                                        setTimeout(function() {
+                                                            genHeart.style.opacity = '60%'
+                                                            setTimeout(function() {
+                                                                genHeart.style.opacity = '50%'
+                                                                setTimeout(function() {
+                                                                    genHeart.style.opacity = '40%'
+                                                                    setTimeout(function() {
+                                                                        genHeart.style.opacity = '30%'
+                                                                        setTimeout(function() {
+                                                                            genHeart.style.opacity = '20%'
+                                                                            setTimeout(function() {
+                                                                                genHeart.style.opacity = '10%'
+                                                                                setTimeout(function() {
+                                                                                    genHeart.style.opacity = '0%'
+                                                                                    genHeart.style.display = 'none';
+                                                                                    decideWhatToDo();
+                                                                                }, 200);
+                                                                            }, 200);
+                                                                        }, 200);
+                                                                    }, 200);
+                                                                }, 200);
+                                                            }, 200);
+                                                        }, 200);
+                                                    }, 200);
+                                                }, 200);
+                                            }, 2000);
+                                        }, 200);
+                                    }, 200);
+                                }, 200);
+                            }, 200);
+                        }, 200);
+                    }, 200);
+                }, 200);
+            }, 200);
+        }, 200);
+    }, 200);
+    setTimeout(function() {
+    decideWhatToDo();
+  }, 6000);
   }
 
   if(playerName.value === "jameson" || playerName.value === 'Jameson') {
