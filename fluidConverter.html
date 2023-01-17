@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>ppp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div id='container'>
+  		<input class='block' type="text" id="oneInp" placeholder="# of selected units">
+		<select class='block' id='oneUnits'>
+			<option value="nothing"></option>
+			<option value="gallons">gallons</option>
+			<option value="quarts">quarts</option>
+			<option value="pints">Ppints</option>
+			<option value="cups">cups</option>
+		</select>
+	<p class='block' id='arrow'>----></p>
+		<select id='twoUnits' class='block'>
+			<option value="nothing"></option>
+			<option value="gallons">gallons</option>
+			<option value="quarts">quarts</option>
+			<option value="pints">Ppints</option>
+			<option value="cups">cups</option>
+		</select>
+	<button id='subButton' onclick='convert()'>Convert</button>
+	<h1 id='bob'></h1>
+</div>
+
+  <script src="fluidUnits.js"></script>
+</body>
+</html>
