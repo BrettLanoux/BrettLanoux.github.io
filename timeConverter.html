@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>Time Converter</title>
+  <style>
+	#arrow {
+		margin: 0px;
+		padding: 0px;
+	}
+	#test {
+		position: absolute;
+		width: 600px;
+		height: 200px;
+		top: 0px;
+		left: 0px;
+	}
+	.block {
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<div id="test">
+		<input id='typer' class='block' type='number' placeholder='# of units'>
+		<select class='block' id='seleOne'>
+			<option value='nothing'></option>
+			<option value='years'>years</option>
+			<option value='weeks'>weeks</option>
+			<option value='days'>days</option>
+			<option value='hours'>hours</option>
+			<option value='minutes'>minutes</option>
+			<option value='seconds'>seconds</option>
+		</select>
+		<p class='block' id='arrow'>----></p>
+		<select class='block' id='seleTwo'>
+			<option value='nothing'></option>
+			<option value='years'>years</option>
+			<option value='weeks'>weeks</option>
+			<option value='days'>days</option>
+			<option value='hours'>hours</option>
+			<option value='minutes'>minutes</option>
+			<option value='seconds'>seconds</option>
+		</select>
+		<button class='block' onclick='convert()'>Convert</button>
+		<h1 id='wow'></h1>
+	</div>
+
+  <script>
+var sOne = document.getElementById('seleOne');
+var sTwo = document.getElementById('seleTwo');
+var imp = document.getElementById('typer');
+var shower = document.getElementById('wow');
+var a;
+
+function show(thing) {
+	shower.innerText = thing + " " + sTwo.value;
+}
+
+function convert() {
+	if(sOne.value === sTwo.value) {
+		alert('You cant convert ' + sOne.value + ' to ' + sTwo.value + '!!!');
+	}
+	else if(sOne.value === 'nothing' || sTwo.value === 'nothing') {
+		alert('You need to put something in the unit selection!!!');
+	}
+	else if(sOne.value === 'years') {
+		if(sTwo.value === 'weeks') {
+			a = imp.value * 52;
+		}
+		else if(sTwo.value === 'days') {
+			a = imp.vaule * 365;
+		}
+		else if(sTwo.value === 'hours') {
+			a = imp.value * 8760;
+		}
+		else if(sTwo.value === 'minutes') {
+			a = imp.value * 525600
+		}
+		else if(sTwo.value === 'seconds') {
+			a = imp.value * 31536000
+		}
+	}
+	else if(sOne.value === 'weeks') {
+		if(sTwo.value === 'years') {
+			a = imp.value/52
+		}
+		else if(sTwo.value === 'days') {
+			a = imp.value * 7;
+		}
+		else if(sTwo.value === 'hours') {
+			a = imp.value * 168;
+		}
+		else if(sTwo.value === 'minutes') {
+			a = imp.value * 10080
+		}
+		else if(sTwo.value === 'seconds') {
+			a = imp.value * 604800
+		}
+	}
+	else if(sOne.value === 'days') {
+		if(sTwo.value === 'years') {
+			a = imp.value/365;
+		}
+		else if(sTwo.value === 'weeks') {
+			a = imp.value/7;
+		}
+		else if(sTwo.value === 'hours') {
+			a = imp.value * 24;
+		}
+		else if(sTwo.value === 'minutes') {
+			a = imp.value * 1440;
+		}
+		else if(sTwo.value === 'seconds') {
+			a = imp.value * 86400;
+		}
+	}
+	else if(sOne.value === 'hours') {
+		if(sTwo.value === 'years') {
+			a = imp.value/8760;
+		}
+		else if(sTwo.value === 'weeks') {
+			a = imp.value/168;
+		}
+		else if(sTwo.value === 'days') {
+			a = imp.value/24;
+		}
+		else if(sTwo.value === 'minutes') {
+			a = imp.value * 60;
+		}
+		else if(sTwo.value === 'seconds') {
+			a = imp.value * 3600;
+		}
+	}
+	else if(sOne.value === 'minutes') {
+		if(sTwo.value === 'years') {
+			a = imp.value/525600;
+		}
+		else if(sTwo.value === 'weeks') {
+			a = imp.value/10080;
+		}
+		else if(sTwo.value === 'days') {
+			a = imp.value/1440;
+		}
+		else if(sTwo.value === 'hours') {
+			a = imp.value/60;
+		}
+		else if(sTwo.value === 'seconds') {
+			a = imp.value * 60;
+		}
+	}
+	else if(sOne.value === 'seconds') {
+		if(sTwo.value === 'years') {
+			a = imp.value/31536000;
+		}
+		else if(sTwo.value === 'weeks') {
+			a = imp.value/604800;
+		}
+		else if(sTwo.value === 'days') {
+			a = imp.value/68400;
+		}
+		else if(sTwo.value === 'hours') {
+			a = imp.value/3600;
+		}
+		else if(sTwo.value === 'minutes') {
+			a = imp.value/60;
+		}
+	}
+show(a);
+}
+</script>
+</body>
+</html>
