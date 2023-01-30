@@ -6,6 +6,7 @@
             padding: 0px;
             margin: 0px;
             background-color: rgb(0, 0, 0);
+            user-select: none;
         }
         #test {
             position: absolute;
@@ -47,7 +48,7 @@
             width: 175px;
             background-color: rgb(0, 0, 0);
             color: white;
-            z-index: 10;
+            z-index: 1;
             border: 2px solid rgb(255, 255, 255);
             margin: 0px;
             padding: 0px;
@@ -77,9 +78,27 @@
             position: absolute;
             top: 24px;
             left: 200px;
-            height: 182px;
-            width: 395px;
+            height: 186px;
+            width: 405px;
             border: 2px solid white;
+        }
+        #other {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            height: 67px;
+            border-top: 2px solid white;
+            border-right: 2px solid white;
+            color: white;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            width: 99%;
+            background-color: rgb(0, 0, 0);
+        }
+        #homeLink {
+            position: absolute;
+            top: 25px;
+            left: 30px;
+            color: inherit;
         }
     </style>
   <meta charset="UTF-8">
@@ -100,6 +119,11 @@
   </div>
   <div id="hid">
     
+  </div>
+  <div id="other">
+    <a id="homeLink" href="pdTable.html">
+        Home
+    </a>
   </div>
 </body>
 <script>
@@ -281,9 +305,8 @@
             }
 
 
-            if(this.sym === 'Nonmetals' || this.sym === 'Noble Gasses' || this.sym === 'Alkali Metals' || this.sym === 'Alkaline Earths' || this.sym === 'Basic Metals' || this.sym === 'Semimetals' || this.sym === 'Halogens' || this.sym === 'Transition Metals' || this.sym === 'Lanthanides' || this.sym === 'Actinides') {
-                sym.style.fontSize = '5px';
-                documetn.getElementById('identify').appendChild(div);
+            if(this.elName === 'Nonmetals' || this.elName === 'Noble Gasses' || this.elName === 'Alkali Metals' || this.elName === 'Alkaline Earths' || this.elName === 'Basic Metals' || this.elName === 'Semimetals' || this.elName === 'Halogens' || this.elName === 'Transition Metals' || this.elName === 'Lanthanides' || this.elName === 'Actinides') {
+                document.getElementById('identify').appendChild(div);
             }
 
 
@@ -414,16 +437,16 @@
     const livermorium = new element('Livermorium', 116, 'Lv', [293], l7H, l16L, 'Basic Metal');
     const tennessine = new element('Tennessine', 117, 'Ts', [294], l7H, l17L, 'Halogen');
     const oganesson = new element('Oganesson', 118, 'Og', [294], l7H, l18L, 'Noble Gas');
-    const one = new element('', '', 'Nonmetals', '', '', '', 'Nonmetal');
-    const two = new element('', '', 'Noble Gasses', '', '', '', 'Noble Gas');
-    const three = new element('', '', 'Alkali Metals', '', '', '', 'Alkali Metal');
-    const four = new element('', '', 'Alkaline Earths', '', '', '', 'Alkaline Earth');
-    const five = new element('', '', 'Semimetals', '', '', '', 'Semimetal');
-    const six = new element('', '', 'Basic Metals', '', '', '', 'Basic Metal');
-    const seven = new element('', '', 'Halogens', '', '', '', 'Halogen');
-    const eight = new element('', '', 'Transition Metals', '', '', '', 'Transition Metal');
-    const nine = new element('', '', 'Lanthanide', '', '', '', 'Lanthanide');
-    const ten = new element('', '', 'Actinide', '', '', '', 'Actinide');
+    const one = new element('Nonmetals', '', '', '', '40px', '215px', 'Nonmetal');
+    const two = new element('Noble Gasses', '', '', '', '40px', '290px', 'Noble Gas');
+    const three = new element('Alkali Metals', '', '', '', '40px', '366px', 'Alkali Metal');
+    const four = new element('Alkaline Earths', '', '', '', '40px', '441px', 'Alkaline Earth');
+    const five = new element('Semimetals', '', '', '', '40px', '516px', 'Semimetal');
+    const six = new element('Basic Metals', '', '', '', '118px', '215px', 'Basic Metal');
+    const seven = new element('Halogens', '', '', '', '118px', '290px', 'Halogen');
+    const eight = new element('Transition Metals', '', '', '', '118px', '366px', 'Transition Metal');
+    const nine = new element('Lanthanide', '', '', '', '118px', '441px', 'Lanthanide');
+    const ten = new element('Actinide', '', '', '', '118px', '516px', 'Actinide');
     hydrogen.makeDisplay();
     helium.makeDisplay();
     lithium.makeDisplay();
@@ -544,5 +567,15 @@
     livermorium.makeDisplay();
     tennessine.makeDisplay();
     oganesson.makeDisplay();
+    one.makeDisplay();
+    two.makeDisplay();
+    three.makeDisplay();
+    four.makeDisplay();
+    five.makeDisplay();
+    six.makeDisplay();
+    seven.makeDisplay();
+    eight.makeDisplay();
+    nine.makeDisplay();
+    ten.makeDisplay();
 </script>
 </html>
