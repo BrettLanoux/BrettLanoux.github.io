@@ -108,7 +108,7 @@ class element {
         div.style.position = 'absolute';
         div.style.top = this.row;
         div.style.left = this.column;
-        div.style.borderRadius = '25px';
+        div.style.borderRadius = '20px';
         var t = this.num;
         div.setAttribute('id', t);
 
