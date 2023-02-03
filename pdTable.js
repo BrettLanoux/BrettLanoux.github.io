@@ -261,6 +261,7 @@ class element {
 }
 
 const hydrogen = new element("Hydrogen", 1,  "H", 1.01, l1H, l1L, 'Nonmetal');
+const javenium = new element("Javenium", 1.5, 'Ja', 254.07, l1H, l2L, 'Noble Gas')
 const helium = new element("Helium", 2, "He", 4.00, l1H, l18L, 'Noble Gas');
 const lithium = new element("Lithium", 3, "Li", 6.94, l2H, l1L, 'Alkali Metal');
 const beryllium = new element("Beryllium", 4, "Be", 9.01, l2H, l2L, 'Alkaline Earth') ;
@@ -391,6 +392,7 @@ const eight = new element('Transition Metals', '', '', '', '118px', '366px', 'Tr
 const nine = new element('Lanthanide', '', '', '', '118px', '441px', 'Lanthanide');
 const ten = new element('Actinide', '', '', '', '118px', '516px', 'Actinide');
 hydrogen.makeDisplay();
+javenium.makeDisplay();
 helium.makeDisplay();
 lithium.makeDisplay();
 beryllium.makeDisplay();
