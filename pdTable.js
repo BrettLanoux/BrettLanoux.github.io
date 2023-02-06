@@ -65,7 +65,7 @@ class element {
         this.mass = mass;
         this.row = row;
         this.column = column;
-        this.group = group
+        this.group = group;
         this.width;
         this.height;
     }
@@ -102,7 +102,8 @@ class element {
         div.appendChild(sym);
         div.appendChild(mss);
 
-        div.style.height = '76px';
+        div.style.height = '75%';
+        div.style.width = '5.35%';
         div.style.textAlign = 'center';
         div.style.border = '2px black solid'
         div.style.position = 'absolute';
@@ -224,8 +225,8 @@ class element {
                 d.innerText = div.lastChild.innerText;
                 allThing.style.color = 'black';
                 allThing.style.backgroundColor = div.style.backgroundColor;
-                p.style.width = 100 + 'px';
-                p.style.height = 100 + 'px';
+                p.style.width = 7.13 + '%';
+                p.style.height = 100 + '%';
                 p.style.zIndex = '100';
             }
         });
@@ -239,13 +240,13 @@ class element {
             var l = document.getElementsByClassName('box');
             var o = document.getElementsByClassName('oof');
             for(var i = 0; i < l.length; i++) { 
-                l[i].style.width = 73 + 'px';
-                l[i].style.height = 76 + 'px';
+                l[i].style.width = 5.35 + '%';
+                l[i].style.height = 75 + '%';
                 l[i].style.zIndex = '1';
             }
             for(var m = 0; m < o.length; m++) {
-                o[m].style.width = 73 + 'px';
-                o[m].style.height = 76 + 'px';
+                o[m].style.width = 5.35 + '%';
+                o[m].style.height = 75 + '%';
                 o[m].style.zIndex = '1';
             }
         })
