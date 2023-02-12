@@ -1,13 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="https://previews.123rf.com/images/jirkaejc/jirkaejc0803/jirkaejc080300006/2731244-the-green-radioactive-symbol-on-black-background.jpg">
     <style>
         body {
             padding: 0px;
             margin: 0px;
             background-color: rgb(0, 0, 0);
             user-select: none;
+            overflow: hidden;
+        }
+        #test {
+            position: absolute;
+            top: 0px; /* Header Height */
+            height: 100%;
+            width: 100%;
+        }
+        .box {
+            margin-right: 1px;
+            z-index: 999;
+        }
+        .now {
+            margin-right: 1px;
+            z-index: 999;
+        }
+        .oof {
+            height: 100%;
+            margin-right: 1px;
+            display: inherit;
+        }
+        #hid {
+            position: absolute;
+            top: 190px;
+            left: 50px;
+            width: 1157px;
+            height: 200px;
+            background-color: rgb(0, 0, 0);
+            z-index: 2;
+            display: none;
+            border: 2px solid rgb(255, 255, 255);
+        }
+        #example {
+            position: absolute;
+            left: 695px;
+            top: 27px;
+            height: 175px;
+            width: 175px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            z-index: 1;
+            border: 2px solid rgb(255, 255, 255);
+            margin: 0px;
+            padding: 0px;
+        }
+        #a {
+            margin-top: 0px;
+            margin-bottom: 11px;
+        }
+        #b {
+            margin-top: 0px;
+        }
+        #c {
+            margin-top: 0px;
+            font-size: 25px;
+        }
+        #d {
+            margin-top: 0px;
+        }
+        #identify {
+            position: absolute;
+            top: 24px;
+            left: 200px;
+            height: 186px;
+            width: 405px;
+            border: 2px solid white;
         }
         #other {
             position: absolute;
@@ -21,196 +86,59 @@
             width: 98.7%;
             background-color: rgb(0, 0, 0);
             }
-            .links {
-                color: inherit;
-                position: absolute;
-                top: 25px;
-                z-index: 10;
-            }
-            #homeLink {
-                left: 30px;
-            }
-            #calcLink{
-                left: 120px;
-            }
-            #nukeFizzLink {
-                left: 250px;
-            }
-            #wholePage {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                height: 88.5%;
-                width: 100%;
-                background-color: black;
-            }
-            #box {
-                position: absolute;
-                width: 200px;
-                height: 200px;
-                border-radius: 100%;
-                background-color: transparent;
-                left: 200px;
-                top: 175px;
-            }
+        .links {
+            color: inherit;
+            position: absolute;
+            top: 25px;
+        }
+        #homeLink {
+            left: 30px;
+        }
+        #calcLink {
+            left: 120px;
+        }
+        #nukeFizzLink {
+            left: 250px;
+        }
+        #switchViewButton {
+            position: absolute;
+            left: 1100px;
+            top: 30px;
+        }
     </style>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Periodic Table of Elements Interactive Chart</title>
 </head>
-<body onload="makeNeutron()">
-    <div id="wholePage">
-        <div id="box">
-
-        </div>
+<body id="hole" onload="generate(), change()">
+    <div id="example">
+        <center>
+            <p id="a">Element Name</p>
+            <p id="b">Atomic Number</p>
+            <h1 id="c">Atomic Symbol</h1>
+            <p id="d">Atomic Mass</p>
+        </center>
     </div>
-    <div id="other">
-        <a id="homeLink" class="links" href="pdTable.html">
-            Home
-        </a>
-        <a id="calcLink" class="links" href="chemCalc.html">
-            Calculators
-        </a>
-        <a id="nukeFizzLink" class="links" href="nukeFizz.html">
-            Nuclear Fission Thing
-        </a>
-      </div>
+    <div id="identify">
+
+    </div>
+  <div id='test'>
+    
+  </div>
+  <div id="hid">
+    
+  </div>
+  <div id="other">
+    <a id="homeLink" class="links" href="pdTable.html">
+        Home
+    </a>
+    <a id="calcLink" class="links" href="chemCalc.html">
+        Calculators
+    </a>
+    <a id="nukeFizzLink" class="links" href="nukeFizz.html">
+        Nuclear Fission Thing
+    </a>
+  </div>
+    <button onclick="change()" id="switchViewButton">Swap</button>
 </body>
-<script>
-            var dHeight = 25;
-            var dWidth = 25;
-            var bHeight = 200;
-            var bWidth = 200;
-            var g = 0;
-    class particle {
-        constructor(type, x, y) {
-            this.type = type;
-            this.x = x;
-            this.y = y;
-        }
-        make() {
-            var div = document.createElement('div');
-            var txt = document.createElement('a');
-            var dZ = Math.floor(Math.random() * (11 - 1) + this.x);
-            var xRand = Math.floor(Math.random() * (118 - this.x) + this.x);
-            var yRand = Math.floor(Math.random() * (118 - this.y) + this.y);
-
-            var boxThing = document.getElementById('box');
-
-            var randDiffX = Math.floor(Math.random() * (16 - 1) + 1);
-            var randDiffY = Math.floor(Math.random() * (16 - 1) + 1);
-
-            var exRand = Math.floor(Math.random() * (31 - 1) + 1);
-
-            txt.style.position = 'inherit'
-
-            div.style.width = dWidth + 'px';
-            div.style.height = dHeight + 'px';
-            div.style.borderRadius = '100%';
-            div.style.display = 'block';
-            div.style.position = 'absolute';
-            div.style.zIndex = dZ;
-            div.style.border = '1px solid black';
-            div.setAttribute('class', 'nog');
-
-            if(this.type === 'p') {
-                div.style.backgroundColor = 'red';
-                txt.style.left = '8px'
-                txt.style.top = '2px'
-                txt.innerText = '+';
-                div.style.left = xRand + 'px';
-                div.style.top = yRand + 'px';
-            }
-            else if(this.type === 'n') {
-                txt.innerText = '+/-';
-                txt.style.left = '4px'
-                txt.style.top = '2px'
-                div.style.backgroundColor = 'white';
-                div.style.left = xRand + 'px';
-                div.style.top = yRand + 'px';
-            }
-            div.appendChild(txt)
-            boxThing.appendChild(div);
-        }
-    }
-    for(var a = 0; a < 30; a++) {
-        let proton = new particle('p', 50, 50);
-        proton.make();
-        let neutron = new particle('n', 50, 50);
-        neutron.make();
-    }
-
-
-    var randoX = Math.floor(Math.random() * (1308 - 1) + 1);
-    var randoY = Math.floor(Math.random() * (524 - 1) + 1);
-
-    function makeNeutron() {
-        var div = document.createElement('div');
-        var txt = document.createElement('a');
-        var dZ = Math.floor(Math.random() * (11 - 1) + this.x);
-        randoX = Math.floor(Math.random() * (1308 - 1) + 1);
-        randoY = Math.floor(Math.random() * (524 - 1) + 1);
-        animate(randoX, randoY);
-        var dHeight = 25;
-        var dWidth = 25;
-
-        div.style.width = dWidth + 'px';
-        div.style.height = dHeight + 'px';
-        div.style.borderRadius = '100%';
-        div.style.display = 'block';
-        div.style.position = 'absolute';
-        div.style.zIndex = '2';
-        div.style.border = '1px solid black';
-        div.setAttribute('id', 'flonk');
-
-        txt.style.position = 'inherit';
-        txt.innerText = '+/-';
-        txt.style.left = '4px'
-        txt.style.top = '2px'
-
-        div.style.backgroundColor = 'white';
-
-        if((randoX >= 199 && randoX <= 399) || (randoY >= 199 && randoY <= 399)) {
-            makeNeutron();
-        }
-        else{
-            div.style.left = randoX + 'px';
-            div.style.top = randoY + 'px';
-            div.appendChild(txt)
-            document.getElementById('wholePage').appendChild(div);
-        }
-    }
-
-
-    function animate(one, two) {
-        setInterval(function yeet() {
-            if(one <= 299) {
-                one++;
-                document.getElementById('flonk').style.left = one + 'px';
-            }
-            if(one >= 299) {
-                one--;
-                document.getElementById('flonk').style.left = one + 'px';
-            }
-
-            if(two < 275) {
-                two++;
-                document.getElementById('flonk').style.top = two + 'px';
-            }
-            if(two > 275) {
-                two--;
-                document.getElementById('flonk').style.top = two + 'px';
-            }
-            if(one === 300) {
-                if(two === 275) {
-                    for(var jfk = 0; jfk < 30;jfk++) {
-                        var poi = jfk.toString();
-                         var sdfakj = document.getElementsByClassName('nog');
-                         sdfakj[jfk].style.left = Math.floor(Math.random() * (1308 - 1) + 1) + 'px';
-                         sdfakj[jfk].style.top = Math.floor(Math.random() * (524 - 1) + 1) + 'px';
-                    }
-                    clearInterval(yeet());
-                }
-            }
-        }, 15);
-        }
-</script>
+<script src="pdTable.js"></script>
 </html>
