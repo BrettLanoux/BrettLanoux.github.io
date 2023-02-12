@@ -102,7 +102,6 @@ class element {
         div.appendChild(sym);
         div.appendChild(mss);
 
-        div.style.height = '75%';
         div.style.width = '5.35%';
         div.style.textAlign = 'center';
         div.style.border = '2px black solid'
@@ -216,9 +215,19 @@ class element {
                 }
             });
         }
+        
+        if(div.getAttribute('class') === 'box' || div.getAttribute('class') === 'now') {
+            div.style.width = 5.35 + '%';
+            div.style.height = 12.3 + '%';
+        }
+        if(div.getAttribute('class') === 'oof') {
+            div.style.width = 8.5 + '%';
+            div.style.height = 38 + '%';
+        }
+        
         div.addEventListener('mouseover', function() {
             var p = document.getElementById(div.getAttribute('id'));
-            if(div.getAttribute('class') === 'box' || div.getAttribute('class') === 'oof') {
+            if(div.getAttribute('class') === 'box') {
                 a.innerText = div.firstChild.innerText;
                 b.innerText = div.children.item(1).innerText;
                 c.innerText = div.children.item(2).innerText;
@@ -226,9 +235,20 @@ class element {
                 allThing.style.color = 'black';
                 allThing.style.backgroundColor = div.style.backgroundColor;
                 p.style.width = 7.13 + '%';
-                p.style.height = 100 + '%';
+                p.style.height = 16.4 + '%';
                 p.style.zIndex = '100';
             }
+            if(div.getAttribute('class') === 'oof') {
+                a.innerText = div.firstChild.innerText;
+                b.innerText = div.children.item(1).innerText;
+                c.innerText = div.children.item(2).innerText;
+                d.innerText = div.lastChild.innerText;
+                allThing.style.color = 'black';
+                allThing.style.backgroundColor = div.style.backgroundColor;
+                p.style.width = 8.5 + '%';
+                p.style.height = 50 + '%';
+                p.style.zIndex = '100';
+            } 
         });
         div.addEventListener('mouseleave', function() {
             a.innerText = 'Element Name';
@@ -238,15 +258,21 @@ class element {
             allThing.style.backgroundColor = 'black'
             allThing.style.color = 'white'
             var l = document.getElementsByClassName('box');
+            var pk = document.getElementsByClassName('now');
             var o = document.getElementsByClassName('oof');
             for(var i = 0; i < l.length; i++) { 
                 l[i].style.width = 5.35 + '%';
-                l[i].style.height = 75 + '%';
+                l[i].style.height = 12.3 + '%';
                 l[i].style.zIndex = '1';
             }
+            for(var r = 0; r < pk.length; r++) { 
+                pk[r].style.width = 5.35 + '%';
+                pk[r].style.height = 12.3 + '%';
+                pk[r].style.zIndex = '1';
+            }
             for(var m = 0; m < o.length; m++) {
-                o[m].style.width = 5.35 + '%';
-                o[m].style.height = 75 + '%';
+                o[m].style.width = 6.3 + '%';
+                o[m].style.height = 38 + '%';
                 o[m].style.zIndex = '1';
             }
         })
