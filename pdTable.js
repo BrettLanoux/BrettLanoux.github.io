@@ -5,34 +5,34 @@ var b = document.getElementById('b');
 var c = document.getElementById('c')
 var d = document.getElementById('d');
 
-const increaseH = 78;
-const l1H = '0px';
-const l2H = increaseH + 'px';
-const l3H = increaseH*2 + 'px';
-const l4H = increaseH*3 + 'px';
-const l5H = increaseH*4 + 'px';
-const l6H = increaseH*5 + 'px';
-const l7H = increaseH*6 + 'px';
+const increaseH = 12.5;
+const l1H = '0%';
+const l2H = increaseH + '%';
+const l3H = increaseH*2 + '%';
+const l4H = increaseH*3 + '%';
+const l5H = increaseH*4 + '%';
+const l6H = increaseH*5 + '%';
+const l7H = increaseH*6 + '%';
 
-const increaseL = 75;
-const l1L = '0px';
-const l2L = increaseL + 'px';
-const l3L = increaseL*2 + 'px';
-const l4L = increaseL*3 + 'px';
-const l5L = increaseL*4 + 'px';
-const l6L = increaseL*5 + 'px';
-const l7L = increaseL*6 + 'px';
-const l8L = increaseL*7 + 'px';
-const l9L = increaseL*8 + 'px';
-const l10L = increaseL*9 + 'px';
-const l11L = increaseL*10 + 'px';
-const l12L = increaseL*11 + 'px';
-const l13L = increaseL*12 + 'px';
-const l14L = increaseL*13 + 'px';
-const l15L = increaseL*14 + 'px';
-const l16L = increaseL*15 + 'px';
-const l17L = increaseL*16 + 'px';
-const l18L = increaseL*17 + 'px';
+const increaseL = 5.5;
+const l1L = '0%';
+const l2L = increaseL + '%';
+const l3L = increaseL*2 + '%';
+const l4L = increaseL*3 + '%';
+const l5L = increaseL*4 + '%';
+const l6L = increaseL*5 + '%';
+const l7L = increaseL*6 + '%';
+const l8L = increaseL*7 + '%';
+const l9L = increaseL*8 + '%';
+const l10L = increaseL*9 + '%';
+const l11L = increaseL*10 + '%';
+const l12L = increaseL*11 + '%';
+const l13L = increaseL*12 + '%';
+const l14L = increaseL*13 + '%';
+const l15L = increaseL*14 + '%';
+const l16L = increaseL*15 + '%';
+const l17L = increaseL*16 + '%';
+const l18L = increaseL*17 + '%';
 
 const oHInt = 15;
 const oHIntInc = 50;
@@ -69,7 +69,7 @@ class element {
         this.width;
         this.height;
     }
-    makeDisplay() {
+    makeDisplay(para) {
         var div = document.createElement('div');
         var elName = document.createElement('p');
         var atNum = document.createElement('p');
@@ -102,7 +102,6 @@ class element {
         div.appendChild(sym);
         div.appendChild(mss);
 
-        div.style.width = '5.35%';
         div.style.textAlign = 'center';
         div.style.border = '2px black solid'
         div.style.position = 'absolute';
@@ -114,41 +113,64 @@ class element {
 
         
 
-        this.width = 73;
-        this.height = 76;
+        if(para === 1) {
+            if(this.group === 'Alkali Metal') {
+                div.style.backgroundColor = 'red';
+            }
+            else if(this.group === 'Alkaline Earth') {
+                div.style.backgroundColor = 'orange';
+            }
+            else if(this.group === 'Transition Metal') {
+                div.style.backgroundColor = 'rgb(255, 252, 60)'; 
+            }
+            else if(this.group === 'Basic Metal') {
+                div.style.backgroundColor = 'rgb(57, 225, 20)';
+            }
+            else if(this.group === 'Semimetal') {
+                div.style.backgroundColor = 'skyblue'
+            }
+            else if(this.group === 'Nonmetal') {
+                div.style.backgroundColor = 'rgb(131, 238, 255)';
+            }
+            else if(this.group === 'Halogen') {
+                div.style.backgroundColor = 'rgb(130, 100, 237)';
+            }
+            else if(this.group === 'Noble Gas') {
+                div.style.backgroundColor = 'rgb(70, 80, 205)';
+            }
+            else if(this.group === 'Lanthanide') {
+                div.style.backgroundColor = 'rgb(255, 105, 180)';
+            }
+            else if(this.group === 'Actinide') {
+                div.style.backgroundColor = 'grey';
+            }
+        }
+        if(para === 2) {
+            if(this.column === l1L || this.column === l2L) {
+                div.style.backgroundColor = 'lightblue'
+            }
+            if(this.column === l1H && this.row === l18L) {
+                div.style.backgroundColor = 'lightblue'
+            }
+            if(this.column === l3L || this.column === l4L || this.column === l5L || this.column === l6L || this.column === l7L || this.column === l8L || this.column === l9L || this.column === l10L || this.column === l11L || this.column === l12L) {
+                div.style.backgroundColor = 'lightgreen'
+            }
+            if(this.column === l3L) {
+                if(this.row === l6H || this.row === l7H) {
+                    div.style.backgroundColor = 'red'
+                }
+            }
+            if(this.column === l13L || this.column === l14L || this.column === l15L || this.column === l16L || this.column === l17L || this.column === l18L) {
+                div.style.backgroundColor = 'mediumorchid';
+            }
 
 
+            if(this.column === oL1 || this.column === oL2 || this.column === oL3 || this.column === oL4 || this.column === oL5 || this.column === oL6 || this.column === oL7 || this.column === oL8 || this.column === oL9 || this.column === oL10 || this.column === oL11 || this.column === oL12 || this.column === oL13 || this.column === oL14 || this.column === oL15) {
+                div.style.backgroundColor = 'red'
+            }
+        }
 
-        if(this.group === 'Alkali Metal') {
-            div.style.backgroundColor = 'red';
-        }
-        else if(this.group === 'Alkaline Earth') {
-            div.style.backgroundColor = 'orange';
-        }
-        else if(this.group === 'Transition Metal') {
-            div.style.backgroundColor = 'rgb(255, 252, 60)'; 
-        }
-        else if(this.group === 'Basic Metal') {
-            div.style.backgroundColor = 'rgb(57, 225, 20)';
-        }
-        else if(this.group === 'Semimetal') {
-            div.style.backgroundColor = 'skyblue'
-        }
-        else if(this.group === 'Nonmetal') {
-            div.style.backgroundColor = 'rgb(131, 238, 255)';
-        }
-        else if(this.group === 'Halogen') {
-            div.style.backgroundColor = 'rgb(130, 100, 237)';
-        }
-        else if(this.group === 'Noble Gas') {
-            div.style.backgroundColor = 'rgb(70, 80, 205)';
-        }
-        else if(this.group === 'Lanthanide') {
-            div.style.backgroundColor = 'rgb(255, 105, 180)';
-        }
-        else if(this.group === 'Actinide') {
-            div.style.backgroundColor = 'grey';
-        }
+
 
         if(this.num <= 56) {
             div.style.zIndex = '1';
@@ -198,24 +220,11 @@ class element {
         var v = 0;
         if((this.num/1) === this.num) {
             div.addEventListener('click', function() {
-                if(div.children.item(2).innerText === 'B'){
-                    if(v === 0) {
-                        setInterval(check(), 1);
-                        setTimeout(function() {
-                            clearInterval(check());
-                        }, 5000);
-                        v++;
-                    }
-                    if(v === 1) {
-                        setInterval(checkTwo(), 1);
-                        setTimeout(function() {
-                            clearInterval(checkTwo());
-                        }, 5000);
-                    }
+                if(v === 0) {
                 }
-            });
+            })
         }
-        
+
         if(div.getAttribute('class') === 'box' || div.getAttribute('class') === 'now') {
             div.style.width = 5.35 + '%';
             div.style.height = 12.3 + '%';
@@ -409,144 +418,154 @@ const moscovium = new element('Moscovium', 115, 'Mc', [286], l7H, l15L, 'Basic M
 const livermorium = new element('Livermorium', 116, 'Lv', [293], l7H, l16L, 'Basic Metal');
 const tennessine = new element('Tennessine', 117, 'Ts', [294], l7H, l17L, 'Halogen');
 const oganesson = new element('Oganesson', 118, 'Og', [294], l7H, l18L, 'Noble Gas');
-const one = new element('Nonmetals', '', '', '', '40px', '215px', 'Nonmetal');
-const two = new element('Noble Gasses', '', '', '', '40px', '290px', 'Noble Gas');
-const three = new element('Alkali Metals', '', '', '', '40px', '366px', 'Alkali Metal');
-const four = new element('Alkaline Earths', '', '', '', '40px', '441px', 'Alkaline Earth');
-const five = new element('Semimetals', '', '', '', '40px', '516px', 'Semimetal');
-const six = new element('Basic Metals', '', '', '', '118px', '215px', 'Basic Metal');
-const seven = new element('Halogens', '', '', '', '118px', '290px', 'Halogen');
-const eight = new element('Transition Metals', '', '', '', '118px', '366px', 'Transition Metal');
-const nine = new element('Lanthanide', '', '', '', '118px', '441px', 'Lanthanide');
-const ten = new element('Actinide', '', '', '', '118px', '516px', 'Actinide');
-hydrogen.makeDisplay();
-javenium.makeDisplay();
-helium.makeDisplay();
-lithium.makeDisplay();
-beryllium.makeDisplay();
-boron.makeDisplay();
-carbon.makeDisplay();
-nitrogen.makeDisplay();
-oxygen.makeDisplay();
-flourine.makeDisplay();
-neon.makeDisplay();
-soduim.makeDisplay();
-magnesium.makeDisplay();
-aluminum.makeDisplay();
-silicon.makeDisplay();
-phosphorus.makeDisplay();
-sulfur.makeDisplay();
-chlorine.makeDisplay();
-argon.makeDisplay();
-potassium.makeDisplay();
-calcium.makeDisplay();
-scandium.makeDisplay();
-titanium.makeDisplay();
-vanadium.makeDisplay();
-chromium.makeDisplay();
-manganese.makeDisplay();
-iron.makeDisplay();
-cobalt.makeDisplay();
-nickel.makeDisplay();
-copper.makeDisplay();
-zinc.makeDisplay();
-gallium.makeDisplay();
-germanium.makeDisplay();
-arsenic.makeDisplay();
-selenium.makeDisplay();
-bromine.makeDisplay();
-krypton.makeDisplay();
-rubidium.makeDisplay();
-strontium.makeDisplay();
-yttrium.makeDisplay();
-zirconium.makeDisplay();
-niobium.makeDisplay();
-molybdenum.makeDisplay();
-technetium.makeDisplay();
-ruthenium.makeDisplay();
-rhodium.makeDisplay();
-palladium.makeDisplay();
-silver.makeDisplay();
-cadmium.makeDisplay();
-indium.makeDisplay();
-tin.makeDisplay();
-antimony.makeDisplay();
-tellurium.makeDisplay();
-iodine.makeDisplay();
-xenon.makeDisplay();
-cesium.makeDisplay();
-barium.makeDisplay();
-francium.makeDisplay();
-radium.makeDisplay();
-empty.makeDisplay();
-empty2.makeDisplay();
-lanthanum.makeDisplay();
-cerium.makeDisplay();
-praseodymium.makeDisplay();
-neodymium.makeDisplay();
-promethium.makeDisplay();
-samarium.makeDisplay();
-europium.makeDisplay();
-gadolinium.makeDisplay();
-terbium.makeDisplay();
-dysprosium.makeDisplay();
-holmium.makeDisplay();
-erbium.makeDisplay();
-thulium.makeDisplay();
-ytterbium.makeDisplay();
-lutetium.makeDisplay();
-hafnium.makeDisplay();
-tantalum.makeDisplay();
-tungsten.makeDisplay();
-rhenium.makeDisplay();
-osmium.makeDisplay();
-iridium.makeDisplay();
-platinum.makeDisplay();
-gold.makeDisplay();
-mercury.makeDisplay();
-thallium.makeDisplay();
-lead.makeDisplay();
-bismuth.makeDisplay();
-polonium.makeDisplay();
-astatine.makeDisplay();
-radon.makeDisplay();
-actinium.makeDisplay();
-throium.makeDisplay();
-protactinium.makeDisplay();
-uranium.makeDisplay();
-neptunium.makeDisplay();
-plutonium.makeDisplay();
-americium.makeDisplay();
-curium.makeDisplay();
-berkelium.makeDisplay();
-californium.makeDisplay();
-einsteinium.makeDisplay();
-fermium.makeDisplay();
-mendelevium.makeDisplay();
-nobelium.makeDisplay();
-lawrencium.makeDisplay();
-rutherfordium.makeDisplay();
-dubnium.makeDisplay();
-seaborgium.makeDisplay();
-bohrium.makeDisplay();
-hassium.makeDisplay();
-meltnerium.makeDisplay();
-darmstadtium.makeDisplay();
-roentgenium.makeDisplay();
-copernicium.makeDisplay();
-nihonium.makeDisplay();
-flerovium.makeDisplay();
-moscovium.makeDisplay();
-livermorium.makeDisplay();
-tennessine.makeDisplay();
-oganesson.makeDisplay();
-one.makeDisplay();
-two.makeDisplay();
-three.makeDisplay();
-four.makeDisplay();
-five.makeDisplay();
-six.makeDisplay();
-seven.makeDisplay();
-eight.makeDisplay();
-nine.makeDisplay();
-ten.makeDisplay();
+const one = new element('Nonmetals', 1000, '', '', '40px', '215px', 'Nonmetal');
+const two = new element('Noble Gasses', 1001, '', '', '40px', '290px', 'Noble Gas');
+const three = new element('Alkali Metals', 1002, '', '', '40px', '366px', 'Alkali Metal');
+const four = new element('Alkaline Earths', 1003, '', '', '40px', '441px', 'Alkaline Earth');
+const five = new element('Semimetals', 1004, '', '', '40px', '516px', 'Semimetal');
+const six = new element('Basic Metals', 1005, '', '', '118px', '215px', 'Basic Metal');
+const seven = new element('Halogens', 1006, '', '', '118px', '290px', 'Halogen');
+const eight = new element('Transition Metals', 1007, '', '', '118px', '366px', 'Transition Metal');
+const nine = new element('Lanthanide', 1008, '', '', '118px', '441px', 'Lanthanide');
+const ten = new element('Actinide', 1009, '', '', '118px', '516px', 'Actinide');
+var bob = 1;
+
+function change() {
+    if(bob === 1) {
+        bob = 2;
+    }
+    else{
+        bob = 1;
+    }
+}
+hydrogen.makeDisplay(bob);
+javenium.makeDisplay(bob);
+helium.makeDisplay(bob);
+lithium.makeDisplay(bob);
+beryllium.makeDisplay(bob);
+boron.makeDisplay(bob);
+carbon.makeDisplay(bob);
+nitrogen.makeDisplay(bob);
+oxygen.makeDisplay(bob);
+flourine.makeDisplay(bob);
+neon.makeDisplay(bob);
+soduim.makeDisplay(bob);
+magnesium.makeDisplay(bob);
+aluminum.makeDisplay(bob);
+silicon.makeDisplay(bob);
+phosphorus.makeDisplay(bob);
+sulfur.makeDisplay(bob);
+chlorine.makeDisplay(bob);
+argon.makeDisplay(bob);
+potassium.makeDisplay(bob);
+calcium.makeDisplay(bob);
+scandium.makeDisplay(bob);
+titanium.makeDisplay(bob);
+vanadium.makeDisplay(bob);
+chromium.makeDisplay(bob);
+manganese.makeDisplay(bob);
+iron.makeDisplay(bob);
+cobalt.makeDisplay(bob);
+nickel.makeDisplay(bob);
+copper.makeDisplay(bob);
+zinc.makeDisplay(bob);
+gallium.makeDisplay(bob);
+germanium.makeDisplay(bob);
+arsenic.makeDisplay(bob);
+selenium.makeDisplay(bob);
+bromine.makeDisplay(bob);
+krypton.makeDisplay(bob);
+rubidium.makeDisplay(bob);
+strontium.makeDisplay(bob);
+yttrium.makeDisplay(bob);
+zirconium.makeDisplay(bob);
+niobium.makeDisplay(bob);
+molybdenum.makeDisplay(bob);
+technetium.makeDisplay(bob);
+ruthenium.makeDisplay(bob);
+rhodium.makeDisplay(bob);
+palladium.makeDisplay(bob);
+silver.makeDisplay(bob);
+cadmium.makeDisplay(bob);
+indium.makeDisplay(bob);
+tin.makeDisplay(bob);
+antimony.makeDisplay(bob);
+tellurium.makeDisplay(bob);
+iodine.makeDisplay(bob);
+xenon.makeDisplay(bob);
+cesium.makeDisplay(bob);
+barium.makeDisplay(bob);
+francium.makeDisplay(bob);
+radium.makeDisplay(bob);
+empty.makeDisplay(bob);
+empty2.makeDisplay(bob);
+lanthanum.makeDisplay(bob);
+cerium.makeDisplay(bob);
+praseodymium.makeDisplay(bob);
+neodymium.makeDisplay(bob);
+promethium.makeDisplay(bob);
+samarium.makeDisplay(bob);
+europium.makeDisplay(bob);
+gadolinium.makeDisplay(bob);
+terbium.makeDisplay(bob);
+dysprosium.makeDisplay(bob);
+holmium.makeDisplay(bob);
+erbium.makeDisplay(bob);
+thulium.makeDisplay(bob);
+ytterbium.makeDisplay(bob);
+lutetium.makeDisplay(bob);
+hafnium.makeDisplay(bob);
+tantalum.makeDisplay(bob);
+tungsten.makeDisplay(bob);
+rhenium.makeDisplay(bob);
+osmium.makeDisplay(bob);
+iridium.makeDisplay(bob);
+platinum.makeDisplay(bob);
+gold.makeDisplay(bob);
+mercury.makeDisplay(bob);
+thallium.makeDisplay(bob);
+lead.makeDisplay(bob);
+bismuth.makeDisplay(bob);
+polonium.makeDisplay(bob);
+astatine.makeDisplay(bob);
+radon.makeDisplay(bob);
+actinium.makeDisplay(bob);
+throium.makeDisplay(bob);
+protactinium.makeDisplay(bob);
+uranium.makeDisplay(bob);
+neptunium.makeDisplay(bob);
+plutonium.makeDisplay(bob);
+americium.makeDisplay(bob);
+curium.makeDisplay(bob);
+berkelium.makeDisplay(bob);
+californium.makeDisplay(bob);
+einsteinium.makeDisplay(bob);
+fermium.makeDisplay(bob);
+mendelevium.makeDisplay(bob);
+nobelium.makeDisplay(bob);
+lawrencium.makeDisplay(bob);
+rutherfordium.makeDisplay(bob);
+dubnium.makeDisplay(bob);
+seaborgium.makeDisplay(bob);
+bohrium.makeDisplay(bob);
+hassium.makeDisplay(bob);
+meltnerium.makeDisplay(bob);
+darmstadtium.makeDisplay(bob);
+roentgenium.makeDisplay(bob);
+copernicium.makeDisplay(bob);
+nihonium.makeDisplay(bob);
+flerovium.makeDisplay(bob);
+moscovium.makeDisplay(bob);
+livermorium.makeDisplay(bob);
+tennessine.makeDisplay(bob);
+oganesson.makeDisplay(bob);
+one.makeDisplay(bob);
+two.makeDisplay(bob);
+three.makeDisplay(bob);
+four.makeDisplay(bob);
+five.makeDisplay(bob);
+six.makeDisplay(bob);
+seven.makeDisplay(bob);
+eight.makeDisplay(bob);
+nine.makeDisplay(bob);
+ten.makeDisplay(bob);
