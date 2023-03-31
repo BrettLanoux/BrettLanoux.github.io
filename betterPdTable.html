@@ -45,19 +45,19 @@ function start() {
 
         name.innerText = elementName[inc1];
         name.style.margin = '0px';
-        name.style.fontSize = ((16/parseFloat(window.innerHeight))*4000) + '%';
+        name.style.fontSize = (parseFloat(window.innerHeight, 10)/(16/2.1)) + '%';
         
         number.innerText = (inc1 + 1);
         number.style.margin = '0px';
-        number.style.fontSize = ((16/parseFloat(window.innerHeight))*4000) + '%';
+        number.style.fontSize = (parseFloat(window.innerHeight, 10)/(16/2.1)) + '%';
 
         symbol.innerText = elementSymbol[inc1];
         symbol.style.margin = '0px';
-        symbol.style.fontSize = ((43/parseFloat(window.innerHeight))*2800) + '%';
+        symbol.style.fontSize = (parseFloat(window.innerHeight, 10)/3.3) + '%';
 
         mass.innerText = elementMass[inc1];
         mass.style.margin = '5px';
-        mass.style.fontSize = ((16/parseFloat(window.innerHeight))*4000) + '%';
+        mass.style.fontSize = (parseFloat(window.innerHeight, 10)/(16/2.1)) + '%';
 
         div.style.position = 'absolute';
         div.style.height = hgt + 'px';
