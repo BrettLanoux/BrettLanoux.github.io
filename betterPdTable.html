@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: gainsboro;
+        overflow: hidden;
+    }
+</style>
+<body onload="start()">
+    <div id='main'>
+
+    </div>
+</body>
+<script>
+    const elementName =["Hydrogen","Helium","Lithium","Beryllium","Boron","Carbon","Nitrogen","Oxygen","Fluorine","Neon","Sodium","Magnesium","Aluminum","Silicon","Phosphorus","Sulfur","Chlorine","Argon","Potassium","Calcium","Scandium","Titanium","Vanadium","Chromium","Manganese","Iron","Cobalt","Nickel","Copper","Zinc","Gallium","Germanium","Arsenic","Selenium","Bromine","Krypton","Rubidium","Strontium","Yttrium","Zirconium","Niobium","Molybdenum","Technetium","Ruthenium","Rhodium","Palladium","Silver","Cadmium","Indium","Tin","Antimony","Tellurium","Iodine","Xenon","Cesium","Barium","Lanthanum","Cerium","Praseodymium","Neodymium","Promethium","Samarium","Europium","Gadolinium","Terbium","Dysprosium","Holmium","Erbium","Thulium","Ytterbium","Lutetium","Hafnium","Tantalum","Tungsten","Rhenium","Osmium","Iridium","Platinum","Gold","Mercury","Thallium","Lead","Bismuth","Polonium","Astatine","Radon","Francium","Radium","Actinium","Thorium","Protactinium","Uranium","Neptunium","Plutonium","Americium","Curium","Berkelium","Californium","Einsteinium","Fermium","Mendelevium","Nobelium","Lawrencium","Rutherfordium","Dubnium","Seaborgium","Bohrium","Hassium","Meitnerium","Darmstadtium","Roentgenium","Copernicium","Nihonium","Flerovium","Moscovium","Livermorium","Tennessine","Oganesson"]; 
+const elementSymbol = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br","Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"]; 
+const elementMass = ["1.0079","4.0026","6.941","9.0122","10.811","12.0107","14.0067","15.9994","18.9984","20.1797","22.9897","24.305","26.9815","28.0855","30.9738","32.065","35.453","39.948","39.0983","40.078","44.9559","47.867","50.9415","51.9961","54.938","55.845","58.9332","58.6934","63.546","65.39","69.723","72.64","74.9216","78.96","79.904","83.8","85.4678","87.62","88.9059","91.224","92.9064","95.94","98","101.07","102.9055","106.42","107.8682","112.411","114.818","118.71","121.76","127.6","126.9045","131.293","132.9055","137.327","138.9055","140.116","140.9077","144.24","145","150.36","151.964","157.25","158.9253","162.5","164.9303","167.259","168.9342","173.04","174.967","178.49","180.9479","183.84","186.207","190.23","192.217","195.078","196.9665","200.59","204.3833","207.2","208.9804","209","210","222","223","226","227","232.0381","231.0359","238.0289","237","244","243","247","247","251","252","257","258","259","262","261","262","266","264","277","268","281","282","285","286","289","289","293","294","294"];
+const elementType = ["nm","ng","am","aem","m","nm","nm","nm","h","ng","am","aem","om","m","nm","nm","h","ng","am","aem","tm","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","m","m","nm","h","ng","am","aem","tm","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","om","m","m","h","ng","am","aem","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","om","om","m","h","ng","am","aem","tm","tm","tm","tm","tm","tm","tm","tm","tm","u","u","u","u","u","u"];
+
+var prohibX = 0;
+var prohibY = 0;
+var borderSize = 1;
+var screenWdth = (parseFloat(window.innerWidth, 10) - prohibX);
+var screenHgt = (parseFloat(window.innerHeight, 10) - prohibY);
+var wdth = (screenWdth/18);
+var hgt = (screenHgt/7);
+var xCount = 0;
+var yCount = 0;
+var divCount = 0;
+
+function start() {
+    for(var inc1 = 0; inc1 < 88; inc1++) {
+        //alert(xPos)
+        var div = document.createElement('div');
+        var name = document.createElement('p');
+        var number = document.createElement('p');
+        var symbol = document.createElement('h1');
+        var mass = document.createElement('p')
+
+        name.innerText = elementName[inc1];
+        name.style.margin = '0px';
+        name.style.fontSize = ((16/parseFloat(window.innerHeight))*4000) + '%';
+        
+        number.innerText = (inc1 + 1);
+        number.style.margin = '0px';
+        number.style.fontSize = ((16/parseFloat(window.innerHeight))*4000) + '%';
+
+        symbol.innerText = elementSymbol[inc1];
+        symbol.style.margin = '0px';
+        symbol.style.fontSize = ((43/parseFloat(window.innerHeight))*2800) + '%';
+
+        mass.innerText = elementMass[inc1];
+        mass.style.margin = '5px';
+        mass.style.fontSize = ((16/parseFloat(window.innerHeight))*4000) + '%';
+
+        div.style.position = 'absolute';
+        div.style.height = hgt + 'px';
+        div.style.width = wdth + 'px';
+        div.style.textAlign = 'center';
+        div.style.border = borderSize + 'px solid black';
+        div.style.left = (wdth * xCount) + prohibX + 'px';
+        div.style.top = (hgt * yCount) + prohibY + 'px';
+        div.style.borderRadius = '10%';
+
+        if(elementType[inc1] === 'ng') {
+            div.style.backgroundColor = 'blue';
+        }
+        else if(elementType[inc1] === 'h') {
+            div.style.backgroundColor = 'pink';
+        }
+        else if(elementType[inc1] === 'tm') {
+            div.style.backgroundColor = 'yellow';
+        }
+        else if(elementType[inc1] === 'm') {
+            div.style.backgroundColor = 'lime';
+        }
+        else if(elementType[inc1] === 'nm') {
+            div.style.backgroundColor = 'purple';
+        }
+        else if(elementType[inc1] === 'am') {
+            div.style.backgroundColor = 'red';
+        }
+        else if(elementType[inc1] === 'aem') {
+            div.style.backgroundColor = 'orange';
+        }
+        else if(elementType[inc1] === 'om') {
+            div.style.backgroundColor = 'cyan';
+        }
+        else if(elementType[inc1] === 'u') {
+            div.style.backgroundColor =  'gray';
+        }
+
+        if(yCount === 0) {
+            if(xCount === 0) {
+                xCount=17;
+            }
+            else if(xCount === 17) {
+                xCount=0;
+                yCount++;
+            }
+        }
+        else if(yCount === 1 || yCount === 2) {
+            if(xCount === 0) {
+                xCount++;
+            }
+            else if(xCount === 1) {
+                xCount = 12;
+            }
+            else if(xCount < 17) {
+                xCount++;
+            }
+            else if(xCount === 17) {
+                xCount = 0;
+                yCount++;
+            }
+        }
+        else if(yCount <= 6 && yCount > 2) {
+            if(yCount === 5 || yCount === 6) {
+                if(xCount === 1) {
+                    divCount+=15
+                    xCount++;
+                    var clickDiv = document.createElement('div');
+                    clickDiv.style.position = 'absolute';
+                    clickDiv.style.height = hgt + 'px';
+                    clickDiv.style.width = wdth + 'px';
+                    clickDiv.style.textAlign = 'center';
+                    clickDiv.style.border = borderSize + 'px solid black';
+                    clickDiv.style.left = (wdth * xCount) + prohibX + 'px';
+                    clickDiv.style.top = (hgt * yCount) + prohibY + 'px';
+                    clickDiv.style.borderRadius = '10%'
+                    if(yCount === 5) {clickDiv.innerText = '56-71';}
+                    else if(yCount === 6) {clickDiv.innerText = '89-103';}
+                    document.getElementById('main').appendChild(clickDiv);
+                }
+            }
+            if(xCount < 17) {
+                xCount++;
+            }
+            else{
+                xCount=0;
+                yCount++;
+            }
+        }
+
+        divCount++;
+        div.appendChild(name);
+        div.appendChild(number);
+        div.appendChild(symbol);
+        div.appendChild(mass);
+        document.getElementById('main').appendChild(div);
+    }
+}
+</script>
+</html>
