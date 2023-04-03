@@ -11,6 +11,7 @@
         background-color: rgb(39, 39, 39);
         overflow-x: hidden;
         user-select: none;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     #mainTwo {
         position: absolute;
@@ -33,7 +34,7 @@
         padding: auto;
         align-items: center;
         height: 35%;
-        background-color: rgb(39, 39, 39);
+        background-color: rgb(53, 53, 53);
         border-radius: 15%;
         border: 2px solid white;
         font-size: 1.5vw;
@@ -50,18 +51,31 @@
         background-color: rgb(53, 53, 53);
         border-radius: 20% 0% 20% 0%;
         border: 2px solid white;
-        color: whitesmoke
+        color: whitesmoke;
+        font-size: 1vw;
     }
     #iH2 {
         
     }
     #dropDownOne {
         position: absolute;
-        left: 900px;
-        top: 0px;
+        left: 950px;
+        top: 35px;
+        width: 150px;
+        height: 50px;
+        color: white;
+        background-color: rgb(53, 53, 53);
+        border: 2px solid white;
+    }
+    .bold {
+        text-align: center;
+        font-size: 1vw;
     }
     #iH3 {
 
+    }
+    #settings {
+        
     }
 </style>
 <body onload="start()">
@@ -89,7 +103,7 @@
     <div id="settings">
         
     </div>
-    <select id="dropDownOne">
+    <select class="bold" id="dropDownOne">
         <option value="normal">Normal</option>
         <option value="charges">Ionic Charges</option>
         <option value="configs">Electron Configuration</option>
@@ -97,13 +111,12 @@
 </body>
 <script>
     const elementName =["Hydrogen","Helium","Lithium","Beryllium","Boron","Carbon","Nitrogen","Oxygen","Fluorine","Neon","Sodium","Magnesium","Aluminum","Silicon","Phosphorus","Sulfur","Chlorine","Argon","Potassium","Calcium","Scandium","Titanium","Vanadium","Chromium","Manganese","Iron","Cobalt","Nickel","Copper","Zinc","Gallium","Germanium","Arsenic","Selenium","Bromine","Krypton","Rubidium","Strontium","Yttrium","Zirconium","Niobium","Molybdenum","Technetium","Ruthenium","Rhodium","Palladium","Silver","Cadmium","Indium","Tin","Antimony","Tellurium","Iodine","Xenon","Cesium","Barium","Lanthanum","Cerium","Praseodymium","Neodymium","Promethium","Samarium","Europium","Gadolinium","Terbium","Dysprosium","Holmium","Erbium","Thulium","Ytterbium","Lutetium","Hafnium","Tantalum","Tungsten","Rhenium","Osmium","Iridium","Platinum","Gold","Mercury","Thallium","Lead","Bismuth","Polonium","Astatine","Radon","Francium","Radium","Actinium","Thorium","Protactinium","Uranium","Neptunium","Plutonium","Americium","Curium","Berkelium","Californium","Einsteinium","Fermium","Mendelevium","Nobelium","Lawrencium","Rutherfordium","Dubnium","Seaborgium","Bohrium","Hassium","Meitnerium","Darmstadtium","Roentgenium","Copernicium","Nihonium","Flerovium","Moscovium","Livermorium","Tennessine","Oganesson"]; 
-    const elementSymbol = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br","Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"]; 
-    const elementMass = ["1.0079","4.0026","6.941","9.0122","10.811","12.0107","14.0067","15.9994","18.9984","20.1797","22.9897","24.305","26.9815","28.0855","30.9738","32.065","35.453","39.948","39.0983","40.078","44.9559","47.867","50.9415","51.9961","54.938","55.845","58.9332","58.6934","63.546","65.39","69.723","72.64","74.9216","78.96","79.904","83.8","85.4678","87.62","88.9059","91.224","92.9064","95.94","98","101.07","102.9055","106.42","107.8682","112.411","114.818","118.71","121.76","127.6","126.9045","131.293","132.9055","137.327","138.9055","140.116","140.9077","144.24","145","150.36","151.964","157.25","158.9253","162.5","164.9303","167.259","168.9342","173.04","174.967","178.49","180.9479","183.84","186.207","190.23","192.217","195.078","196.9665","200.59","204.3833","207.2","208.9804","209","210","222","223","226","227","232.0381","231.0359","238.0289","237","244","243","247","247","251","252","257","258","259","262","261","262","266","264","277","268","281","282","285","286","289","289","293","294","294"];
-    const elementType = ["nm","ng","am","aem","m","nm","nm","nm","h","ng","am","aem","om","m","nm","nm","h","ng","am","aem","tm","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","m","m","nm","h","ng","am","aem","tm","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","om","m","m","h","ng","am","aem","l","l","l","l","l","l","l","l","l","l","l","l","l","l","l","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","om","om","om","m","ng","am","aem","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","tm","tm","tm","tm","tm","u","u","u","u","u","u","u","u","u","u"];
-    const elementElectronegativity = ["2.2","no data","0.98","1.57","2.04","2.55","3.04","3.44","3.98","no data","0.93","1.31","1.61","1.9","2.19","2.58","3.16","no data","0.82","1","1.36","1.54","1.63","1.66","1.55","1.83","1.88","1.91","1.9","1.65","1.81","2.01","2.18","2.55","2.96","3","0.82","0.95","1.22","1.33","1.6","2.16","1.9","2.2","2.28","2.2","1.93","1.69","1.78","1.96","2.05","2.1","2.66","2.6","0.79","0.89","1.1","1.12","1.13","1.14","1.13","1.17","1.2","1.2","1.22","1.23","1.24","1.24","1.25","1.1","1.27","1.3","1.5","2.36","1.9","2.2","2.28","2.54","2","1.62","2.33","2.02","2","2.2","no data","0.7","0.89","1.1","1.3","1.5","1.38","1.36","1.28","1.3","1.3","1.3","1.3","1.3","1.3","1.3","1.3","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data"];
-    const elementNetCharge = ["+1", "0", "+1", "+2", "+3, -3", "+4", "-3", "-2", "-1", "0", "+1", "+2", "+3", "+4, -4", "+5, +3, -3", "+6, +4, +2, -2", "-1", "0", "+1", "+2", "+3", "+4, +3", "+5, +4, +3, +2", "+6, +3, +2", "+7, +4, +2", "+3, +2", "+3, +2", "+2", "+2, +1", "+2", "+3", "+4, -4, +2", "+5, +3, -3", "+6, +4, -2", "+5, +1, -1", "0", "+1", "+2", "+3", "+4", "+5, +3", "+6, +3", "+6", "+8, +4, +3", "+4", "+4, +2", "+1", "+2", "+3", "+4, +2", "+5, +3, -3", "+6, +4, -2", "-1", "0", "+1", "+2", "+3", "+4, +3", "+3", "+4, +3", "+3", "+3", "+3", "+3", "+4, +3", "+3", "+3", "+3", "+3", "+3", "+3", "+4", "+5", "+6", "+7, +6, +4, +2", "+8, +6, +4, +3", "+6, +4, +3", "+6, +4, +2", "+3, +2, +1", "+2, +1", "+3, +1", "+4, +2", "+3", "+4, +2", "no data", "0", "no data", "+2", "+3", "+4", "+5", "+6, +4, +3","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data"];
-
-    var check = 0;
+const elementSymbol = ["H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br","Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"]; 
+const elementMass = ["1.0079","4.0026","6.941","9.0122","10.811","12.0107","14.0067","15.9994","18.9984","20.1797","22.9897","24.305","26.9815","28.0855","30.9738","32.065","35.453","39.948","39.0983","40.078","44.9559","47.867","50.9415","51.9961","54.938","55.845","58.9332","58.6934","63.546","65.39","69.723","72.64","74.9216","78.96","79.904","83.8","85.4678","87.62","88.9059","91.224","92.9064","95.94","98","101.07","102.9055","106.42","107.8682","112.411","114.818","118.71","121.76","127.6","126.9045","131.293","132.9055","137.327","138.9055","140.116","140.9077","144.24","145","150.36","151.964","157.25","158.9253","162.5","164.9303","167.259","168.9342","173.04","174.967","178.49","180.9479","183.84","186.207","190.23","192.217","195.078","196.9665","200.59","204.3833","207.2","208.9804","209","210","222","223","226","227","232.0381","231.0359","238.0289","237","244","243","247","247","251","252","257","258","259","262","261","262","266","264","277","268","281","282","285","286","289","289","293","294","294"];
+const elementType = ["nm","ng","am","aem","m","nm","nm","nm","h","ng","am","aem","om","m","nm","nm","h","ng","am","aem","tm","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","m","m","nm","h","ng","am","aem","tm","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","om","m","m","h","ng","am","aem","l","l","l","l","l","l","l","l","l","l","l","l","l","l","l","tm","tm","tm","tm","tm","tm","tm","tm","tm","om","om","om","om","m","ng","am","aem","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","tm","tm","tm","tm","tm","u","u","u","u","u","u","u","u","u","u"];
+const elementElectronegativity = ["2.2","no data","0.98","1.57","2.04","2.55","3.04","3.44","3.98","no data","0.93","1.31","1.61","1.9","2.19","2.58","3.16","no data","0.82","1","1.36","1.54","1.63","1.66","1.55","1.83","1.88","1.91","1.9","1.65","1.81","2.01","2.18","2.55","2.96","3","0.82","0.95","1.22","1.33","1.6","2.16","1.9","2.2","2.28","2.2","1.93","1.69","1.78","1.96","2.05","2.1","2.66","2.6","0.79","0.89","1.1","1.12","1.13","1.14","1.13","1.17","1.2","1.2","1.22","1.23","1.24","1.24","1.25","1.1","1.27","1.3","1.5","2.36","1.9","2.2","2.28","2.54","2","1.62","2.33","2.02","2","2.2","no data","0.7","0.89","1.1","1.3","1.5","1.38","1.36","1.28","1.3","1.3","1.3","1.3","1.3","1.3","1.3","1.3","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data"];
+const elementNetCharge = ["+1", "0", "+1", "+2", "+3, -3", "+4", "-3", "-2", "-1", "0", "+1", "+2", "+3", "+4, -4", "+5, +3, -3", "+6, +4, +2, -2", "-1", "0", "+1", "+2", "+3", "+4, +3", "+5, +4, +3, +2", "+6, +3, +2", "+7, +4, +2", "+3, +2", "+3, +2", "+2", "+2, +1", "+2", "+3", "+4, -4, +2", "+5, +3, -3", "+6, +4, -2", "+5, +1, -1", "0", "+1", "+2", "+3", "+4", "+5, +3", "+6, +3", "+6", "+8, +4, +3", "+4", "+4, +2", "+1", "+2", "+3", "+4, +2", "+5, +3, -3", "+6, +4, -2", "-1", "0", "+1", "+2", "+3", "+4, +3", "+3", "+4, +3", "+3", "+3", "+3", "+3", "+4, +3", "+3", "+3", "+3", "+3", "+3", "+3", "+4", "+5", "+6", "+7, +6, +4, +2", "+8, +6, +4, +3", "+6, +4, +3", "+6, +4, +2", "+3, +2, +1", "+2, +1", "+3, +1", "+4, +2", "+3", "+4, +2", "no data", "0", "no data", "+2", "+3", "+4", "+5", "+6, +4, +3","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data","no data"];
+var check = 0;
 
 var prohibX = 0;
 var prohibY = 0;
@@ -112,7 +125,7 @@ var screenWdth = (parseFloat(window.innerWidth, 10) - prohibX);
 var screenHgt = (parseFloat(window.innerHeight, 10) - prohibY);
 var wdth = (screenWdth/18);
 var hgt = (screenHgt/7);
-var xCount = 0;
+var xCount = 0; 
 var yCount = 0;
 var divCount = 0;
 
@@ -131,6 +144,15 @@ if(localStorage.getItem('stateChooser1') === 'charges') {
 }
 if(localStorage.getItem('stateChooser1') === 'configs') {
     stateChooser = 'configs';
+
+    document.getElementById('iH3').remove();
+    document.getElementById('iH2').remove();
+
+    var ngConfig = document.createElement('h1');
+    ngConfig.innerHTML = 'Noble Gas Config';
+    ngConfig.setAttribute('id', 'iH5');
+    document.getElementById('info').appendChild(ngConfig);
+
     var blockDisplayH1 = document.createElement('h1');
     blockDisplayH1.innerHTML = 'Electron Config Block';
     blockDisplayH1.setAttribute('id', 'iH4');
@@ -236,8 +258,6 @@ function start() {
             var plh1_2 = parseFloat(plh1_1, 10);
             var plh1_3 = (plh1_2 - 1);
             var plh1_4 = elementElectronegativity[plh1_3];
-            document.getElementById('iH2').innerText = ('EN: ' + plh1_4);
-            document.getElementById('iH3').innerText = ('IC: ' + elementNetCharge[plh1_3]);
 
             if(stateChooser === 'configs') {
                 if(plh1_2 === 1 || plh1_2 === 2 || plh1_2 === 3 || plh1_2 === 4 || plh1_2 === 11 || plh1_2 === 12 || plh1_2 === 19 || plh1_2 === 20 || plh1_2 === 37 || plh1_2 === 38 || plh1_2 === 55 || plh1_2 === 56 || plh1_2 === 87 || plh1_2 === 88) {
@@ -249,6 +269,10 @@ function start() {
                 else {
                     document.getElementById('iH4').innerText = 'Block p';
                 }
+            }
+            else {
+                document.getElementById('iH2').innerText = ('EN: ' + plh1_4);
+                document.getElementById('iH3').innerText = ('IC: ' + elementNetCharge[plh1_3]);
             }
         })
 
@@ -272,10 +296,12 @@ function start() {
             document.getElementById('eMass').innerText = 'Mass';
             document.getElementById('example').style.backgroundImage = '';
             document.getElementById('example').style.backgroundColor = 'rgb(53, 53, 53)';
-            document.getElementById('iH2').innerText = 'Electronegativity';
-            document.getElementById('iH3').innerText = 'Ionic Charges';
             if(stateChooser === 'configs') {
                 document.getElementById('iH4').innerText = 'Electron Config Block';
+            }
+            else {
+                document.getElementById('iH2').innerText = 'Electronegativity';
+                document.getElementById('iH3').innerText = 'Ionic Charges';
             }
         })
         if(stateChooser === 'normal') {
@@ -493,9 +519,9 @@ function start() {
                     else if(stateChooser === 'charges') {
                         if(yCount === 5) {
                             clickDiv.innerText = '57-71';
-                            clickDiv.style.backgroundColor = 'linear-gradient(to bottom right, white, white)';
+                            clickDiv.style.backgroundImage = 'linear-gradient(to bottom right, white, white)';
                         }
-                        else if(yCount === 6) {
+                        if(yCount === 6) {
                             clickDiv.innerText = '89-103';
                             clickDiv.style.backgroundImage = 'linear-gradient(to bottom right, white, white)';
                         }
@@ -597,11 +623,13 @@ function makeOther() {
             var plh2_2 = parseFloat(plh2_1, 10);
             var plh2_3 = (plh2_2 - 1);
             var plh2_4 = elementElectronegativity[plh2_3];
-            document.getElementById('iH2').innerText = ('EN: ' + plh2_4);
-            document.getElementById('iH3').innerText = ('IC: ' + elementNetCharge[plh2_3]);
 
             if(stateChooser === 'configs') {
                 document.getElementById('iH4').innerText = 'Block: f';
+            }
+            else {
+                document.getElementById('iH2').innerText = ('EN: ' + plh2_4);
+                document.getElementById('iH3').innerText = ('IC: ' + elementNetCharge[plh2_3]);
             }
         })
 
@@ -625,10 +653,13 @@ function makeOther() {
             document.getElementById('eMass').innerText = 'Mass';
             document.getElementById('example').style.backgroundImage = '';
             document.getElementById('example').style.backgroundColor = 'rgb(39,39,39)';
-            document.getElementById('iH2').innerText = 'Electronegativity';
-            document.getElementById('iH3').innerText = 'Ionic Charges';
+
             if(stateChooser === 'configs') {
                 document.getElementById('iH4').innerText = 'Electron Config Block';
+            }
+            else {
+                document.getElementById('iH2').innerText = 'Electronegativity';
+                document.getElementById('iH3').innerText = 'Ionic Charges';
             }
         })
 
