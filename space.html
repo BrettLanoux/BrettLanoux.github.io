@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <style>
+        body {
+            overflow: hidden;
+            background-color:black;
+        }
+        #main {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body onload="calls()">
+    <div id="main">
+
+    </div>
+</body>
+<script>
+    var lft = 0;
+    var tp = 0;
+    var size;
+    function makeStars() {
+        for(var i = 0; i < ((parseFloat(window.innerWidth)/4)*(parseFloat(window.innerHeight)/4) + 237); i++) {
+            var rand = Math.floor(Math.random() * (101 - 1) + 1);
+            
+            if(rand === 47) {
+                size = (Math.floor(Math.random() * (6 - 1) + 1));
+                var box = document.createElement('div');
+                box.style.position = 'absolute';
+                box.style.height = size + 'px';
+                box.style.width = size + 'px';
+                box.style.top = (Math.floor(Math.random() * (window.innerHeight - 1) + 1)) + 'px';
+                box.style.left = (Math.floor(Math.random() * (window.innerWidth - 1) + 1)) + 'px';
+                box.style.backgroundColor = 'rgb(255, 255,' + Math.floor(Math.random() * (256 - 171) + 200) + ')';
+                box.style.borderRadius = '50%'
+                box.style.opacity = (Math.floor(Math.random() * (101 - 1) + 60)) + '%';
+                document.getElementById('main').appendChild(box);
+                box.style.filter = 'blur(0.5px)';
+            }
+        }
+    }
+
+
+    function makePlanets() {
+        var planetColors = [
+            'red',
+            'purple',
+            'blue',
+            'tan',
+            'green'
+        ]
+        for(var i2 = 0; i2 < ((Math.floor(Math.random() * ((260) - 1) + 1))/5); i2++) {
+            
+            var moonRando = Math.floor(Math.random()* (4 - 1) + 1);
+            var planetSize = (Math.floor(Math.random() * (18 - 1) + 3));
+            var planetOpRand = Math.floor(Math.random() * (101 - 1) + 60)
+            var box = document.createElement('div');
+            box.style.position = 'absolute';
+            box.style.height = planetSize + 'px';
+            box.style.width = planetSize + 'px';
+            box.style.top = (Math.floor(Math.random() * (window.innerHeight - planetSize) + planetSize)) + 'px';
+            box.style.left = (Math.floor(Math.random() * (window.innerWidth - planetSize) + planetSize)) + 'px';
+            var planetColorRand = planetColors[Math.floor(Math.random() * (planetColors.length)-1)]
+            box.style.backgroundImage = 'radial-gradient(' + planetColorRand + ',' + planetColorRand + ',' + planetColorRand + ',' + planetColorRand + ',white, transparent, transparent)';
+            box.style.borderRadius = '50%'
+            box.style.opacity = (planetOpRand) + '%';
+            box.style.zIndex = planetOpRand;
+            box.style.filter = 'blur(1px)';
+            box.setAttribute('class', 'planet');
+            box.setAttribute('numPlh', (i2+1));
+
+
+            check(box)
+
+
+            if(moonRando === 1) {
+                var moonSize = (Math.floor(Math.random() * (5 - 1) + 2))
+                var moon = document.createElement('div');
+                moon.style.position = 'absolute';
+                moon.style.height = moonSize + 'px';
+                moon.style.width = moonSize + 'px';
+                moon.style.top = (Math.floor(Math.random() * (planetSize) + moonSize + 1)) + 'px';
+                moon.style.left = (Math.floor(Math.random() * (planetSize) + moon + 1)) + 'px';
+                moon.style.backgroundColor = planetColors[Math.floor(Math.random() * (planetColors.length)-1)];
+                moon.style.borderRadius = '50%';
+                moon.style.opacity = 100 + '%';
+                if(Math.floor(Math.random() * (2)+1) === 2) {
+                    moon.style.zIndex = planetOpRand + 1;
+                }
+                else {
+                    moon.style.zIndex = planetOpRand - 1;
+                }
+                moon.style.filter = 'blur(0px)';
+                box.appendChild(moon);
+            }
+
+            document.getElementById('main').appendChild(box);
+        }
+    }
+
+    function makeDust() {
+
+        var dustColors = [
+            'red',
+            'light',
+            'cyan',
+            'lime',
+            'dodgerblue',
+            'aquamarine',
+            'deepskyblue',
+            'deeppink',
+            'crimonson'
+        ];
+        for(var i3 = 0; i3 < (Math.floor(Math.random() * (2001 - 1) + 100)); i3++) {
+            var dustRando = Math.floor(Math.random() * (101 - 1) + 1);
+            var dustSize = Math.floor(Math.random() * (251 - 1) + 100);
+
+            var box = document.createElement('div');
+            box.style.position = 'absolute';
+            box.style.height = 500 + 'px';
+            box.style.width = 500 + 'px';
+            var dustTp = Math.floor(Math.random() * (window.innerHeight) - dustSize);
+            var dustLft = Math.floor(Math.random() * (window.innerWidth) - dustSize);
+            box.style.top = (dustTp) + 'px';
+            box.style.left = (dustLft) + 'px';
+
+                var shine = document.createElement('div');
+                shine.style.position = 'absolute';
+                shine.style.height = 125 + 'px';
+                shine.style.width = 125 + 'px';
+                shine.style.top = (Math.floor(Math.random() * (500 - 125) + 125)) + 'px';
+                shine.style.left = (Math.floor(Math.random() * (500 - 125) + 125)) + 'px';
+                shine.style.backgroundImage = 'radial-gradient(white, transparent, transparent)';
+                shine.style.opacity = 100 + '%';
+                shine.style.borderRadius = '50%';
+                shine.style.filter = 'blur(5px)';
+                box.appendChild(shine);
+
+            box.style.backgroundImage = 'radial-gradient(' + dustColors[Math.floor(Math.random() * (dustColors.length))] + ', transparent, transparent, transparent)';
+            box.style.opacity = (Math.floor(Math.random() * (31 - 1) + 1)) + '%';
+            box.style.borderRadius = '50%';
+            box.style.filter = 'blur(5px)';
+            document.getElementById('main').appendChild(box);
+        }
+    }
+
+
+    function check(thing) {
+        setInterval(function() {
+            var checkPlh = parseFloat((thing.style.left).replace("px", ""), 10);
+            var checkPlh2 = parseFloat((thing.style.height).replace('px', ''), 10);
+            var checkPlh3 = parseFloat((thing.getAttribute('numPlh')), 10);
+
+            thing.style.left = (checkPlh + (0.05*checkPlh3))+ 'px';
+
+
+            if((checkPlh + checkPlh2) >= window.innerWidth) {
+                thing.style.left = '0px';
+            }
+        }, 10)
+    }
+
+
+
+    function calls() {
+        makeStars();
+        makePlanets();
+        makeDust();
+    }
+</script>
+</html>
