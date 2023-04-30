@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        #main {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body onload="calls()">
+    <div id="main">
+
+    </div>
+</body>
+<script>
+    function makePlanet() {
+        var size = 150;
+        var tp = 30;
+        var lft = 30;
+        for(var i = 0; i < (Math.floor(Math.random() * (11 - 1) + 2)); i++) {
+            var container = document.createElement('div');
+
+            container.style.position = 'absolute';
+            container.style.top = tp + '%';
+            container.style.width = (size + ((size/15)*11) + (size/4)) + 'px';
+            container.style.height = (size + ((size/15)*11) + (size/4)) + 'px';
+            container.style.backgroundColor = '';
+            container.style.borderRadius = '0%';
+            container.style.rotate = '0deg';
+
+            var div = document.createElement('div');
+            div.style.position = 'relative';
+            div.style.top = ((size + ((size/15)*11) + (size/4))/4) + 'px';
+            div.style.left = ((size + ((size/15)*11) + (size/4))/4) + 'px';
+            div.style.width = size + 'px'
+            div.style.height = size + 'px';
+            div.style.backgroundColor = 'lightgray';
+            div.style.borderRadius = '50%';
+            div.setAttribute('id', (i+1));
+
+            container.appendChild(div);
+
+            spin(container);
+
+            if(i === 0) {
+                container.style.left = lft + '%';
+                document.getElementById('main').appendChild(container);
+            }
+            else {
+                tp = 0;
+                container.style.left = (lft + 110) + '%';
+                document.getElementById((i + '')).appendChild(container);
+            }
+            size = size/2.5;
+            tp = 0;
+        }
+    }
+
+
+    function spin(thing) {
+        var spinRando = Math.floor(Math.random() * (3 -1) + 1);
+        var spinSpeed = (Math.floor(Math.random() * (301 - 1) + 1)/500);
+        setInterval(function() {
+
+            var plh1 = parseFloat((thing.style.rotate).replace('deg', ''), 10);
+
+            if(plh1 > 360) {
+                plh1=(plh1-360)
+            }
+
+            if(spinRando === 1) {
+                plh1+=spinSpeed;
+            }
+            else {
+                plh1-=spinSpeed;
+            }
+
+            thing.style.rotate = (plh1) + 'deg';
+        }, 1)
+    }
+
+
+
+
+    function calls() {
+        makePlanet();
+    }
+</script>
+</html>
