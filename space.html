@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Thingy</title>
+    <title>Document</title>
     <style>
         body {
             overflow: hidden;
@@ -169,9 +169,11 @@
 
     function check(thing) {
         var randXV = Math.floor(Math.random() * (3 - 1) + 1);
+        var randYV = Math.floor(Math.random() * (3 - 1) + 1);
         var randR = Math.floor(Math.random() * (3 - 1) + 1);
         setInterval(function() {
             var checkPlh = parseFloat((thing.style.left).replace("px", ""), 10);
+            var checkPlh1 = parseFloat((thing.style.top).replace('px', ''), 10);
             var checkPlh2 = parseFloat((thing.style.height).replace('px', ''), 10);
             var checkPlh3 = parseFloat((thing.style.rotate).replace('deg', ''), 10)
 
@@ -182,19 +184,41 @@
                 thing.style.rotate = (checkPlh3 - (0.2*(Math.floor(Math.random() * (6 - 1) + 1)))) + 'deg';
             }
 
+
+
             if(randXV === 1) {
-                thing.style.left = (checkPlh + (0.02*(Math.floor(Math.random() * (21 - 1) + 1))))+ 'px';
+                thing.style.left = (checkPlh + (0.2*((Math.floor(Math.random() * (801 - 1)))/100))) + 'px';
             }
             else {
-                thing.style.left = (checkPlh + (-0.02*(Math.floor(Math.random() * (21 - 1) + 1))))+ 'px';
+                thing.style.left = (checkPlh + (-0.2*((Math.floor(Math.random() * (801 - 1)))/100))) + 'px';
             }
+
+
+
+            if(randYV === 1) {
+                thing.style.top = (checkPlh1 + (0.2*((Math.floor(Math.random() * (801 - 1)))/100))) + 'px';
+            }
+            else {
+                thing.style.top = (checkPlh1 + (-0.2*((Math.floor(Math.random() * (801 - 1)))/100))) + 'px';
+            }
+
             //if the xcoord plus the width is greater than the screen width plus the width plus 2 then:
             //xcoord = 0 minus width
+
             if((checkPlh) > ((window.innerWidth))) {
                 thing.style.left = ((0 - checkPlh2)) + 'px';
             }
             else if((checkPlh + checkPlh2) < (0 - checkPlh2)) {
                 thing.style.left = ((window.innerWidth)) + 'px';
+            }
+
+
+
+            if((checkPlh1) > ((window.innerHeight))) {
+                thing.style.top = ((0 - checkPlh2)) + 'px';
+            }
+            else if((checkPlh1 + checkPlh2) < (0 - checkPlh2)) {
+                thing.style.top = ((window.innerHeight)) + 'px';
             }
         }, 1)
     }
@@ -204,7 +228,7 @@
     function calls() {
         makeStars();
         makePlanets();
-    makeDust();
+        makeDust();
     }
 </script>
 </html>
