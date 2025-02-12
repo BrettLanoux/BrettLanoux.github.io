@@ -37,7 +37,7 @@
         background-color: rgb(53, 53, 53);
         border-radius: 15%;
         border: 2px solid white;
-        font-size: 1.5vw;
+        font-size: 1.3vw;
     }
     #info {
         position: absolute;
@@ -207,19 +207,19 @@ function start() {
 
         name.innerText = elementName[inc1];
         name.style.margin = '0px';
-        name.style.fontSize = 1.1 + 'vw';
+        name.style.fontSize = 1 + 'vw';
         
         number.innerText = (inc1 + 1);
         number.style.margin = '0px';
-        number.style.fontSize = 1.1 + 'vw';
+        number.style.fontSize = 1 + 'vw';
 
         symbol.innerText = elementSymbol[inc1];
-        symbol.style.margin = '0px';
-        symbol.style.fontSize = 2.2 + 'vw';
+        symbol.style.margin = '-0.5vw';
+        symbol.style.fontSize = 2.1 + 'vw';
 
         mass.innerText = elementMass[inc1];
         mass.style.margin = '5px';
-        mass.style.fontSize = 1.1 + 'vw';
+        mass.style.fontSize = 1 + 'vw';
 
         div.style.position = 'absolute';
         div.style.height = hgt + 'px';
@@ -243,10 +243,10 @@ function start() {
             var aad = aaa[2];
             var aae = aaa[3];
 
-            aab.style.fontSize = (1.1 * 1.25) + 'vw';
-            aac.style.fontSize = (1.1 * 1.25) + 'vw';
-            aad.style.fontSize = (2.2 * 1.25) + 'vw';
-            aae.style.fontSize = (1.1 * 1.25) + 'vw';
+            aab.style.fontSize = (1 * 1.25) + 'vw';
+            aac.style.fontSize = (1 * 1.25) + 'vw';
+            aad.style.fontSize = (2.1 * 1.25) + 'vw';
+            aae.style.fontSize = (1 * 1.25) + 'vw';
 
             document.getElementById('eName').innerText = aab.innerText;
             document.getElementById('eNum').innerText = aac.innerText;
@@ -285,10 +285,10 @@ function start() {
             var aacTwo = aaaTwo[1];
             var aadTwo = aaaTwo[2];
             var aaeTwo = aaaTwo[3];
-            aabTwo.style.fontSize = 1.1 + 'vw';
-            aacTwo.style.fontSize = 1.1 + 'vw';
-            aadTwo.style.fontSize = 2.2 + 'vw';
-            aaeTwo.style.fontSize = 1.1 + 'vw';
+            aabTwo.style.fontSize = 1 + 'vw';
+            aacTwo.style.fontSize = 1 + 'vw';
+            aadTwo.style.fontSize = 2.1 + 'vw';
+            aaeTwo.style.fontSize = 1 + 'vw';
             document.getElementById('example').style.color = 'white';
             document.getElementById('eName').innerText = 'Name';
             document.getElementById('eNum').innerText = 'Number';
@@ -499,7 +499,7 @@ function start() {
                     clickDiv.style.left = (wdth * xCount) + prohibX + 'px';
                     clickDiv.style.top = (hgt * yCount) + prohibY + 'px';
                     clickDiv.style.borderRadius = '15%'
-                    clickDiv.style.fontSize = 1.1 + 'vw';
+                    clickDiv.style.fontSize = 1 + 'vw';
 
                     clickDiv.addEventListener('click', function() {
                         if(check === 0) {
@@ -572,20 +572,20 @@ function makeOther() {
         var massTwo = document.createElement('p');
 
         nameTwo.innerText = elementName[inc2];
-        nameTwo.style.margin = '0px';
-        nameTwo.style.fontSize = 1.1 + 'vw';
+        nameTwo.style.margin = '0vw';
+        nameTwo.style.fontSize = 1 + 'vw';
         
         numberTwo.innerText = (inc2 + 1);
         numberTwo.style.margin = '0px';
-        numberTwo.style.fontSize = 1.1 + 'vw';
+        numberTwo.style.fontSize = 1 + 'vw';
 
         symbolTwo.innerText = elementSymbol[inc2];
-        symbolTwo.style.margin = '0px';
-        symbolTwo.style.fontSize = 2.2 + 'vw';
+        symbolTwo.style.margin = '-0.5vw';
+        symbolTwo.style.fontSize = 2.1 + 'vw';
 
         massTwo.innerText = elementMass[inc2];
-        massTwo.style.margin = '5px';
-        massTwo.style.fontSize = 1.1 + 'vw';
+        massTwo.style.margin = '-0.5vw';
+        massTwo.style.fontSize = 1 + 'vw';
 
         divTwo.style.position = 'absolute';
         divTwo.style.height = hgt + 'px';
@@ -607,10 +607,10 @@ function makeOther() {
             var aacThree = aaaThree[1];
             var aadThree = aaaThree[2];
             var aaeThree = aaaThree[3];
-            aabThree.style.fontSize = (1.1 * 1.25) + 'vw';
-            aacThree.style.fontSize = (1.1 * 1.25) + 'vw';
-            aadThree.style.fontSize = (2.2 * 1.25) + 'vw';
-            aaeThree.style.fontSize = (1.1 * 1.25) + 'vw';
+            aabThree.style.fontSize = (1 * 1.25) + 'vw';
+            aacThree.style.fontSize = (1 * 1.25) + 'vw';
+            aadThree.style.fontSize = (2.1 * 1.25) + 'vw';
+            aaeThree.style.fontSize = (1 * 1.25) + 'vw';
             document.getElementById('eName').innerText = aabThree.innerText;
             document.getElementById('eNum').innerText = aacThree.innerText;
             document.getElementById('eSymbol').innerText = aadThree.innerText;
@@ -642,10 +642,10 @@ function makeOther() {
             var aacFour = aaaFour[1];
             var aadFour = aaaFour[2];
             var aaeFour = aaaFour[3];
-            aabFour.style.fontSize = 1.1 + 'vw';
-            aacFour.style.fontSize = 1.1 + 'vw';
-            aadFour.style.fontSize = 2.2 + 'vw';
-            aaeFour.style.fontSize = 1.1 + 'vw';
+            aabFour.style.fontSize = 1 + 'vw';
+            aacFour.style.fontSize = 1 + 'vw';
+            aadFour.style.fontSize = 2.1 + 'vw';
+            aaeFour.style.fontSize = 1 + 'vw';
             document.getElementById('example').style.color = 'white';
             document.getElementById('eName').innerText = 'Name';
             document.getElementById('eNum').innerText = 'Number';
